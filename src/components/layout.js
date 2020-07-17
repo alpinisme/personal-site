@@ -2,60 +2,57 @@ import React from 'react';
 import { Link } from 'gatsby';
 import './layout.css';
 
-class Layout extends React.Component {
-  render() {
-    const { location, title, children } = this.props;
+function Layout({ location, title, children }) {
     const rootPath = `${__PATH_PREFIX__}/`;
     let header;
 
     if (location.pathname === rootPath) {
-      header = (
-        <h1 className="text-red-500">
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      );
+        header = (
+            <h1 className="text-red-500">
+                <Link
+                    style={{
+                        boxShadow: `none`,
+                        textDecoration: `none`,
+                        color: `inherit`,
+                    }}
+                    to={`/`}
+                >
+                    {title}
+                </Link>
+            </h1>
+        );
     } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      );
+        header = (
+            <h3
+                style={{
+                    fontFamily: `Montserrat, sans-serif`,
+                    marginTop: 0,
+                }}
+            >
+                <Link
+                    style={{
+                        boxShadow: `none`,
+                        textDecoration: `none`,
+                        color: `inherit`,
+                    }}
+                    to={`/`}
+                >
+                    {title}
+                </Link>
+            </h3>
+        );
     }
     return (
-      <div className="mx-auto">
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+        <div className="mx-auto bg-gray-100">
+            <header>{header}</header>
+            <main>{children}</main>
+            <footer>
+                © {new Date().getFullYear()}, Built with
+                {` `}
+                <a href="https://www.gatsbyjs.org">Gatsby</a>
+            </footer>
+        </div>
     );
-  }
 }
 
 export default Layout;
