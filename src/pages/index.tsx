@@ -8,40 +8,42 @@ import SEO from '../components/seo';
 
 interface Props {
     data: BlogIndexQuery;
-    location: string;
+    location: { pathname: string };
 }
 
 function BlogIndex({ data, location }: Props): ReactElement {
-    const siteTitle = data.site?.siteMetadata?.title;
+    const siteTitle = data.site?.siteMetadata?.title as string;
     const posts = data.allMarkdownRemark.edges;
 
     return (
         <Layout location={location} title={siteTitle}>
             <SEO title="All posts" />
             <Bio />
-            {posts.map(({ node }) => {
-                const title = node.frontmatter?.title || node.fields?.slug;
-                return (
-                    <div key={node.fields?.slug as string}>
-                        <h3>
-                            <Link
-                                className="text-indigo-500"
-                                to={node.fields?.slug as string}
-                            >
-                                {title}
-                            </Link>
-                        </h3>
-                        <small>{node.frontmatter?.date}</small>
-                        <p
-                            dangerouslySetInnerHTML={{
-                                __html:
-                                    node.frontmatter?.description ||
-                                    (node.excerpt as string),
-                            }}
-                        />
-                    </div>
-                );
-            })}
+            <>
+                {posts.map(({ node }) => {
+                    const title = node.frontmatter?.title || node.fields?.slug;
+                    return (
+                        <div key={node.fields?.slug as string}>
+                            <h3>
+                                <Link
+                                    className="text-indigo-500"
+                                    to={node.fields?.slug as string}
+                                >
+                                    {title}
+                                </Link>
+                            </h3>
+                            <small>{node.frontmatter?.date}</small>
+                            <p
+                                dangerouslySetInnerHTML={{
+                                    __html:
+                                        node.frontmatter?.description ||
+                                        (node.excerpt as string),
+                                }}
+                            />
+                        </div>
+                    );
+                })}
+            </>
         </Layout>
     );
 }

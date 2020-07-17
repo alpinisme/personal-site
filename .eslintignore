@@ -2,3 +2,4 @@ node_modules/
 gatsby-config.js
 gatsby-node.js
 postcss.config.js
+graphql-types.ts

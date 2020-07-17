@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Link } from 'gatsby';
 import './layout.css';
 
-function Layout({ location, title, children }) {
+interface Props {
+    location: { pathname: string };
+    title: string;
+    children?: ReactElement[];
+}
+
+function Layout({ location, title, children }: Props): ReactElement {
     const rootPath = `${__PATH_PREFIX__}/`;
     let header;
 

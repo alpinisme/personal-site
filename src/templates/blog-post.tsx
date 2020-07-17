@@ -1,36 +1,52 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { Link, graphql } from 'gatsby';
+import { BlogPostBySlugQuery } from '../../graphql-types';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-function BlogPostTemplate({ data, location, pageContext }) {
+interface Props {
+    location: { pathname: string };
+    data: BlogPostBySlugQuery;
+    pageContext: {
+        previous: { fields: { slug: string }; frontmatter: { title: string } };
+        next: { fields: { slug: string }; frontmatter: { title: string } };
+    };
+}
+
+function BlogPostTemplate({
+    data,
+    location,
+    pageContext,
+}: Props): ReactElement {
     const post = data.markdownRemark;
-    const siteTitle = data.site.siteMetadata.title;
+    const siteTitle = data.site?.siteMetadata?.title as string;
     const { previous, next } = pageContext;
 
     return (
         <Layout location={location} title={siteTitle}>
             <SEO
-                title={post.frontmatter.title}
-                description={post.frontmatter.description || post.excerpt}
+                title={post?.frontmatter?.title as string}
+                description={
+                    post?.frontmatter?.description || (post?.excerpt as string)
+                }
             />
             <h1
                 style={{
                     marginBottom: 0,
                 }}
             >
-                {post.frontmatter.title}
+                {post?.frontmatter?.title as string}
             </h1>
             <p
                 style={{
                     display: `block`,
                 }}
             >
-                {post.frontmatter.date}
+                {post?.frontmatter?.date}
             </p>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div dangerouslySetInnerHTML={{ __html: post?.html as string }} />
             <hr />
             <Bio />
 

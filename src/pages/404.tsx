@@ -6,12 +6,12 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 interface Props {
-    location: string;
+    location: { pathname: string };
     data: NotFoundPageQuery;
 }
 
 function NotFoundPage({ data, location }: Props): ReactElement {
-    const siteTitle = data.site?.siteMetadata?.title;
+    const siteTitle = data.site?.siteMetadata?.title as string;
 
     return (
         <Layout location={location} title={siteTitle}>
