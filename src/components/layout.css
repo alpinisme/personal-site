@@ -1,18 +1,80 @@
 @tailwind base;
 
-@tailwind components;
-
-.link {
-    @apply text-green-500 underline font-semibold;
-}
-
-@tailwind utilities;
-
 ::selection,
 ::-moz-selection {
     @apply bg-coral-400 text-ocean-800;
 }
 
+body ::selection {
+    @apply bg-coral-400 text-ocean-800;
+}
+
 p {
     @apply font-serif text-ocean-800;
+}
+
+@tailwind components;
+
+.link {
+    @apply text-green-500 underline;
+}
+
+.hindi {
+    @apply text-xl font-light;
+}
+
+@tailwind utilities;
+
+.blog-post h2 {
+    @apply mt-6 mb-3 font-bold text-coral-600 text-xl font-sans;
+}
+
+.blog-post h3 {
+    @apply mt-6 mb-3 text-coral-600 italic text-lg font-sans;
+}
+
+.blog-post h4 {
+    @apply mt-4 mb-3 text-ocean-500 italic text-lg underline font-sans;
+}
+
+.blog-post h5 {
+    @apply mt-4 mb-3 font-bold font-serif italic text-ocean-500;
+}
+
+.blog-post h6 {
+    @apply mt-4 mb-3 italic font-serif text-ocean-500;
+}
+
+.blog-post ul,
+.blog-post ol {
+    @apply my-4 ml-4;
+}
+
+.blog-post li {
+    @apply list-outside pl-2 ml-8 my-2;
+}
+
+.blog-post ul li {
+    @apply list-disc;
+}
+
+.blog-post ol li {
+    @apply list-decimal;
+}
+
+.blog-post ul ::marker,
+.blog-post ol ::marker {
+    @apply text-green-500;
+}
+
+.blog-post p {
+    @apply my-4;
+}
+
+.blog-post a {
+    @apply link;
+}
+
+.blog-post blockquote {
+    @apply mx-8 pl-5 border-l-2 border-solid border-green-400;
 }

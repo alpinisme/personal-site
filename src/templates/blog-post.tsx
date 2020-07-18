@@ -46,43 +46,37 @@ function BlogPostTemplate({
                     post?.frontmatter?.description || (post?.excerpt as string)
                 }
             />
-            <h1
-                style={{
-                    marginBottom: 0,
-                }}
-            >
+            <h1 className="text-coral-600 text-3xl font-sans font-black mt-8 mb-2 text-center">
                 {post?.frontmatter?.title as string}
             </h1>
-            <p
-                style={{
-                    display: `block`,
-                }}
-            >
+            <p className="text-ocean-500 text-sm mb-2 text-center">
                 {post?.frontmatter?.date}
             </p>
-            <div dangerouslySetInnerHTML={{ __html: post?.html as string }} />
-            <hr />
+            <article
+                className="blog-post my-8 p-4 font-serif lg:text-justify"
+                dangerouslySetInnerHTML={{ __html: post?.html as string }}
+            />
             <Bio />
 
-            <ul
-                style={{
-                    display: `flex`,
-                    flexWrap: `wrap`,
-                    justifyContent: `space-between`,
-                    listStyle: `none`,
-                    padding: 0,
-                }}
-            >
+            <ul className="flex flex-wrap justify-between my-8">
                 <li>
                     {previous && (
-                        <Link to={previous.fields.slug} rel="prev">
+                        <Link
+                            className="text-green-500 text-lg ml-2"
+                            to={previous.fields.slug}
+                            rel="prev"
+                        >
                             ← {previous.frontmatter.title}
                         </Link>
                     )}
                 </li>
                 <li>
                     {next && (
-                        <Link to={next.fields.slug} rel="next">
+                        <Link
+                            className="text-green-500 text-lg mr-2"
+                            to={next.fields.slug}
+                            rel="next"
+                        >
                             {next.frontmatter.title} →
                         </Link>
                     )}

@@ -7,7 +7,6 @@
 
 import React, { ReactElement } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
 
 const Bio = (): ReactElement => {
     const data = useStaticQuery(graphql`
@@ -29,29 +28,31 @@ const Bio = (): ReactElement => {
 
     const { author } = data.site.siteMetadata;
     return (
-        <div
-            style={{
-                display: `flex`,
-            }}
-        >
-            <Image
-                fixed={data.avatar.childImageSharp.fixed}
-                alt={author}
-                style={{
-                    marginBottom: 0,
-                    minWidth: 50,
-                    borderRadius: `100%`,
-                }}
-                imgStyle={{
-                    borderRadius: `50%`,
-                }}
-            />
-            <p className="text-center">
-                Written by <strong>{author}</strong>. He doesn&apos;t like{' '}
+        <div className="flex items-center justify-center">
+            <svg
+                className="stroke-current stroke-2 w-4 mr-2 text-green-600 transform rotate-45"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+            >
+                <rect width="80" height="80" x="10" y="10" strokeWidth="4" />
+                <circle r="45" cx="50" cy="50" fill="white" strokeWidth="4" />
+            </svg>
+            <p className="self-center mx-2">
+                Written by <strong>{author}</strong>. He doesn&rsquo;t like{' '}
                 <a className="link" href={`https://twitter.com/`}>
                     Twitter
                 </a>
             </p>
+            <svg
+                className="stroke-current stroke-2 w-4 ml-2 transform rotate-45 text-green-600"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+            >
+                <rect width="80" height="80" x="10" y="10" strokeWidth="4" />
+                <circle r="45" cx="50" cy="50" fill="white" strokeWidth="4" />
+            </svg>
         </div>
     );
 };

@@ -24,10 +24,10 @@ function BlogIndex({ data, location }: Props): ReactElement {
                     const title = node.frontmatter?.title || node.fields?.slug;
                     return (
                         <div
-                            className="border-l-2 border-solid border-coral-600 pl-3"
+                            className="border-l-2 border-solid border-coral-600 pl-3 ml-4"
                             key={node.fields?.slug as string}
                         >
-                            <h3 className="mt-8">
+                            <h3 className="mt-10">
                                 <Link
                                     className="text-coral-600 text-2xl italic"
                                     to={node.fields?.slug as string}
