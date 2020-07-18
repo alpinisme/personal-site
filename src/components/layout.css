@@ -2,4 +2,17 @@
 
 @tailwind components;
 
+.link {
+    @apply text-green-500 underline font-semibold;
+}
+
 @tailwind utilities;
+
+::selection,
+::-moz-selection {
+    @apply bg-coral-400 text-ocean-800;
+}
+
+p {
+    @apply font-serif text-ocean-800;
+}

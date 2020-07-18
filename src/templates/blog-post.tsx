@@ -10,8 +10,22 @@ interface Props {
     location: { pathname: string };
     data: BlogPostBySlugQuery;
     pageContext: {
-        previous: { fields: { slug: string }; frontmatter: { title: string } };
-        next: { fields: { slug: string }; frontmatter: { title: string } };
+        previous: {
+            fields: {
+                slug: string;
+            };
+            frontmatter: {
+                title: string;
+            };
+        };
+        next: {
+            fields: {
+                slug: string;
+            };
+            frontmatter: {
+                title: string;
+            };
+        };
     };
 }
 

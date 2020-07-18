@@ -14,10 +14,7 @@ import { SeoQuery } from '../../graphql-types';
 interface Props {
     description: string;
     lang: string;
-    meta: React.DetailedHTMLProps<
-        React.MetaHTMLAttributes<HTMLMetaElement>,
-        HTMLMetaElement
-    >[];
+    meta: any;
     title: string;
 }
 
@@ -79,7 +76,12 @@ function SEO({ description, lang, meta, title }): ReactElement {
                     content: metaDescription,
                 },
             ].concat(meta)}
-        />
+        >
+            <link
+                href="https://fonts.googleapis.com/css2?family=Martel:wght@200;400;700;900&family=Mulish:ital,wght@0,200;0,400;0,700;0,900;1,300;1,400&display=swap"
+                rel="stylesheet"
+            />
+        </Helmet>
     );
 }
 

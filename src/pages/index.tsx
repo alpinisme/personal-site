@@ -23,17 +23,23 @@ function BlogIndex({ data, location }: Props): ReactElement {
                 {posts.map(({ node }) => {
                     const title = node.frontmatter?.title || node.fields?.slug;
                     return (
-                        <div key={node.fields?.slug as string}>
-                            <h3>
+                        <div
+                            className="border-l-2 border-solid border-coral-600 pl-3"
+                            key={node.fields?.slug as string}
+                        >
+                            <h3 className="mt-8">
                                 <Link
-                                    className="text-indigo-500"
+                                    className="text-coral-600 text-2xl italic"
                                     to={node.fields?.slug as string}
                                 >
                                     {title}
                                 </Link>
                             </h3>
-                            <small>{node.frontmatter?.date}</small>
+                            <small className="text-sm font-serif text-gray-700">
+                                {node.frontmatter?.date}
+                            </small>
                             <p
+                                className="text-lg my-3"
                                 dangerouslySetInnerHTML={{
                                     __html:
                                         node.frontmatter?.description ||

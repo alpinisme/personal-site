@@ -46,10 +46,10 @@ const Bio = (): ReactElement => {
                     borderRadius: `50%`,
                 }}
             />
-            <p>
-                Written by <strong>{author}</strong>.{` `}
-                <a href={`https://twitter.com/}`}>
-                    He doesn&apos;t like Twitter
+            <p className="text-center">
+                Written by <strong>{author}</strong>. He doesn&apos;t like{' '}
+                <a className="link" href={`https://twitter.com/`}>
+                    Twitter
                 </a>
             </p>
         </div>
