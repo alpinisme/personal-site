@@ -1,6 +1,16 @@
 module.exports = {
     purge: ['./src/**/*.js', './src/**/*.tsx'],
     theme: {
+        textIndent: {
+            '-3': '-2rem',
+            '-2': '-1rem',
+            '-1': '-0.5rem',
+            '1': '0.5rem',
+            '2': '1rem',
+            '3': '2rem',
+        },
+        fontVariantLigatures: {},
+        textRendering: {},
         extend: {
             colors: {
                 ocean: {
@@ -96,5 +106,5 @@ module.exports = {
         },
     },
     variants: {},
-    plugins: [],
+    plugins: [require('tailwindcss-typography')({ textUnset: false })],
 };
