@@ -37,6 +37,12 @@ h4 {
 
 @tailwind utilities;
 
+/* blog post styling -- for markdown posts */
+
+.blog-post {
+    counter-reset: h2counter;
+}
+
 .blog-post p {
     @apply my-4;
 }
@@ -47,22 +53,54 @@ h4 {
 
 .blog-post h2 {
     @apply mt-6 mb-3;
+    counter-reset: h3counter 0 h4counter 0 h5counter 0 h6counter 0;
+}
+
+.blog-post h2::before {
+    content: counter(h2counter) '.\0000a0\0000a0';
+    counter-increment: h2counter;
 }
 
 .blog-post h3 {
     @apply mt-6 mb-3;
+    counter-reset: h4counter 0 h5counter 0 h6counter 0;
+}
+
+.blog-post h3::before {
+    content: counter(h2counter) '.' counter(h3counter) '\0000a0\0000a0';
+    counter-increment: h3counter;
 }
 
 .blog-post h4 {
     @apply mt-4 mb-3;
+    counter-reset: h5counter 0 h6counter 0;
+}
+
+.blog-post h4::before {
+    content: counter(h2counter) '.' counter(h3counter) '.' counter(h4counter)
+        '\0000a0\0000a0';
+    counter-increment: h4counter;
 }
 
 .blog-post h5 {
     @apply text-ocean-700 italic text-lg font-sans;
+    counter-reset: h6counter;
+}
+
+.blog-post h5::before {
+    content: counter(h2counter) '.' counter(h3counter) '.' counter(h4counter)
+        '.' counter(h5counter) '\0000a0\0000a0';
+    counter-increment: h5counter;
 }
 
 .blog-post h6 {
     @apply mt-4 mb-3 font-bold font-serif text-ocean-700;
+}
+
+.blog-post h6::before {
+    content: counter(h2counter) '.' counter(h3counter) '.' counter(h4counter)
+        '.' counter(h5counter) '.' counter(h6counter) '\0000a0\0000a0';
+    counter-increment: h6counter;
 }
 
 .blog-post ul,
