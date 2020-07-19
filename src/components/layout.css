@@ -18,11 +18,15 @@ h2 {
 }
 
 h3 {
-    @apply text-coral-600 italic text-lg font-sans;
+    @apply text-coral-700 text-lg italic font-sans;
 }
 
 h4 {
-    @apply text-ocean-700 italic text-lg font-bold font-sans;
+    @apply text-coral-700 text-lg font-light font-sans;
+}
+
+h5 {
+    @apply text-coral-700 text-lg font-light italic font-sans;
 }
 
 @tailwind components;
@@ -62,7 +66,7 @@ h4 {
 }
 
 .blog-post h3 {
-    @apply mt-6 mb-3;
+    @apply mt-4 mb-3;
     counter-reset: h4counter 0 h5counter 0 h6counter 0;
 }
 
@@ -83,7 +87,7 @@ h4 {
 }
 
 .blog-post h5 {
-    @apply text-ocean-700 italic text-lg font-sans;
+    @apply mt-4 mb-3;
     counter-reset: h6counter;
 }
 
@@ -94,7 +98,7 @@ h4 {
 }
 
 .blog-post h6 {
-    @apply mt-4 mb-3 font-bold font-serif text-ocean-700;
+    @apply mt-4 mb-3 font-bold font-sans text-ocean-700;
 }
 
 .blog-post h6::before {
