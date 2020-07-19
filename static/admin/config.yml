@@ -25,6 +25,7 @@ collections:
       slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
       fields:
           - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Venue', name: 'venue', widget: 'string' }
           - {
                 label: 'Publish Year',
                 name: 'year',
@@ -33,6 +34,7 @@ collections:
             }
           - { label: 'Link', name: 'link', widget: 'string', required: false }
           - { label: 'Abstract', name: 'abstract', widget: 'markdown' }
+          - { label: 'Full Citation', name: 'citation', widget: 'markdown' }
     - name: 'course'
       label: 'Course'
       folder: 'content/course'
