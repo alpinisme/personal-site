@@ -22,7 +22,7 @@ h3 {
 }
 
 h4 {
-    @apply text-blue-700 italic text-lg underline font-sans;
+    @apply text-ocean-700 italic text-lg font-bold font-sans;
 }
 
 @tailwind components;
@@ -58,20 +58,20 @@ h4 {
 }
 
 .blog-post h5 {
-    @apply mt-4 mb-3 font-bold font-serif italic text-ocean-500;
+    @apply text-ocean-700 italic text-lg font-sans;
 }
 
 .blog-post h6 {
-    @apply mt-4 mb-3 italic font-serif text-ocean-500;
+    @apply mt-4 mb-3 font-bold font-serif text-ocean-700;
 }
 
 .blog-post ul,
 .blog-post ol {
-    @apply my-4 ml-4;
+    @apply my-4 ml-2;
 }
 
 .blog-post li {
-    @apply list-outside pl-2 ml-8 my-2;
+    @apply list-outside pl-2 ml-4 my-2;
 }
 
 .blog-post li * {
@@ -92,5 +92,20 @@ h4 {
 }
 
 .blog-post blockquote {
-    @apply mx-8 pl-5 border-l-2 border-solid border-ocean-500;
+    @apply mx-4 pl-3 border-l-2 border-solid border-ocean-500;
+}
+
+@screen md {
+    .blog-post ul,
+    .blog-post ol {
+        @apply my-4 ml-4;
+    }
+
+    .blog-post li {
+        @apply pl-2 ml-8;
+    }
+
+    .blog-post blockquote {
+        @apply mx-8 pl-5;
+    }
 }

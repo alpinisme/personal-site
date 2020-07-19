@@ -53,7 +53,7 @@ function BlogPostTemplate({
                 {post?.frontmatter?.date}
             </p>
             <article
-                className="blog-post my-8 md:p-4 font-serif lg:text-justify"
+                className="blog-post my-8 md:p-2 font-serif lg:text-justify"
                 dangerouslySetInnerHTML={{ __html: post?.html as string }}
             />
             <Bio />

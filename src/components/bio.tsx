@@ -30,7 +30,7 @@ const Bio = (): ReactElement => {
     return (
         <div className="flex items-center justify-center">
             <svg
-                className="stroke-current stroke-2 w-4 mr-2 text-green-600 transform rotate-45"
+                className="stroke-current stroke-2 w-3 mr-1 md:mr-2 text-green-600 transform rotate-45"
                 viewBox="0 0 100 100"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -45,7 +45,7 @@ const Bio = (): ReactElement => {
                 </a>
             </p>
             <svg
-                className="stroke-current stroke-2 w-4 ml-2 transform rotate-45 text-green-600"
+                className="stroke-current stroke-2 w-3 md:ml-2 transform rotate-45 text-green-600"
                 viewBox="0 0 100 100"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
