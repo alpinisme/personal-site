@@ -13,6 +13,18 @@ p {
     @apply font-serif text-ocean-800;
 }
 
+h2 {
+    @apply font-bold text-coral-600 text-xl font-sans;
+}
+
+h3 {
+    @apply text-coral-600 italic text-lg font-sans;
+}
+
+h4 {
+    @apply text-blue-700 italic text-lg underline font-sans;
+}
+
 @tailwind components;
 
 .link {
@@ -25,16 +37,24 @@ p {
 
 @tailwind utilities;
 
+.blog-post p {
+    @apply my-4;
+}
+
+.blog-post a {
+    @apply link;
+}
+
 .blog-post h2 {
-    @apply mt-6 mb-3 font-bold text-coral-600 text-xl font-sans;
+    @apply mt-6 mb-3;
 }
 
 .blog-post h3 {
-    @apply mt-6 mb-3 text-coral-600 italic text-lg font-sans;
+    @apply mt-6 mb-3;
 }
 
 .blog-post h4 {
-    @apply mt-4 mb-3 text-ocean-500 italic text-lg underline font-sans;
+    @apply mt-4 mb-3;
 }
 
 .blog-post h5 {
@@ -54,6 +74,10 @@ p {
     @apply list-outside pl-2 ml-8 my-2;
 }
 
+.blog-post li * {
+    @apply my-2;
+}
+
 .blog-post ul li {
     @apply list-disc;
 }
@@ -64,17 +88,9 @@ p {
 
 .blog-post ul ::marker,
 .blog-post ol ::marker {
-    @apply text-green-500;
-}
-
-.blog-post p {
-    @apply my-4;
-}
-
-.blog-post a {
-    @apply link;
+    @apply text-ocean-600;
 }
 
 .blog-post blockquote {
-    @apply mx-8 pl-5 border-l-2 border-solid border-green-400;
+    @apply mx-8 pl-5 border-l-2 border-solid border-ocean-500;
 }
