@@ -2991,7 +2991,7 @@ export type StringQueryOperatorInput = {
 export type BioQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type BioQueryQuery = { avatar?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }>, site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'author'>> }> };
+export type BioQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'author'>> }> };
 
 export type SeoQueryVariables = Exact<{ [key: string]: never; }>;
 
