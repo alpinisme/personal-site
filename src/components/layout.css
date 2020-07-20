@@ -9,30 +9,49 @@ body ::selection {
     @apply bg-coral-400 text-ocean-800;
 }
 
-p {
-    @apply font-serif text-ocean-800;
+body {
+    @apply text-lg font-serif-formal text-ocean-800;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    @apply font-sans-formal;
+}
+
+h1,
+h2 {
+    @apply text-coral-600;
+}
+
+h3,
+h4,
+h5 {
+    @apply text-coral-700;
 }
 
 h2 {
-    @apply font-bold text-coral-600 text-xl font-sans;
+    @apply font-bold text-xl;
 }
 
 h3 {
-    @apply text-coral-700 text-lg italic font-sans;
+    @apply text-lg italic;
 }
 
 h4 {
-    @apply text-coral-700 text-lg font-light font-sans;
+    @apply text-lg font-light;
 }
 
 h5 {
-    @apply text-coral-700 text-lg font-light italic font-sans;
+    @apply text-lg font-light italic;
 }
 
 @tailwind components;
 
 .link {
-    @apply text-green-500 underline;
+    @apply text-blue-500 underline;
 }
 
 .hindi {
@@ -87,7 +106,7 @@ h5 {
 }
 
 .blog-post h5 {
-    @apply mt-4 mb-3;
+    @apply mt-4 mb-3 text-ocean-700;
     counter-reset: h6counter;
 }
 
@@ -98,7 +117,7 @@ h5 {
 }
 
 .blog-post h6 {
-    @apply mt-4 mb-3 font-bold font-sans text-ocean-700;
+    @apply mt-4 mb-3 text-base font-sans text-ocean-700;
 }
 
 .blog-post h6::before {

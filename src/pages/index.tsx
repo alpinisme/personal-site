@@ -29,13 +29,13 @@ function BlogIndex({ data, location }: Props): ReactElement {
                         >
                             <h3 className="mt-10">
                                 <Link
-                                    className="text-coral-600 text-2xl italic"
+                                    className="text-coral-600 text-2xl italic leading-tight"
                                     to={node.fields?.slug as string}
                                 >
                                     {title}
                                 </Link>
                             </h3>
-                            <small className="text-sm font-serif text-gray-700">
+                            <small className="text-sm text-gray-700">
                                 {node.frontmatter?.date}
                             </small>
                             <p

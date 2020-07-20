@@ -68,5 +68,14 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-netlify-cms`,
         `gatsby-plugin-ts`,
+        {
+            resolve: 'gatsby-plugin-web-font-loader',
+            options: {
+                custom: {
+                    families: ['Charter', 'Source Sans Pro', 'freesans'],
+                    urls: ['/fonts/fonts.css'],
+                },
+            },
+        },
     ],
 };

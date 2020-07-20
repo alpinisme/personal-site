@@ -46,14 +46,14 @@ function BlogPostTemplate({
                     post?.frontmatter?.description || (post?.excerpt as string)
                 }
             />
-            <h1 className="text-coral-600 text-3xl font-sans font-black mt-8 mb-2 text-center">
+            <h1 className="text-coral-600 text-3xl font-black mt-8 mb-2 text-center">
                 {post?.frontmatter?.title as string}
             </h1>
             <p className="text-ocean-500 text-sm mb-2 text-center">
                 {post?.frontmatter?.date}
             </p>
             <article
-                className="blog-post my-8 md:p-2 font-serif lg:text-justify hyphens-manual"
+                className="blog-post my-8 md:p-2 lg:text-justify hyphens-manual"
                 dangerouslySetInnerHTML={{ __html: post?.html as string }}
             />
             <Bio />
