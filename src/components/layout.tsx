@@ -13,7 +13,7 @@ function Layout({ location, title, children }: Props): ReactElement {
 
     const header =
         location.pathname === rootPath ? (
-            <h1 className="text-4xl mt-10 mb-6 font-black text-center">
+            <h1 className="text-4xl font-bold mt-12 mb-6 text-center">
                 <Link to={`/`}>{title}</Link>
             </h1>
         ) : (

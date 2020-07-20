@@ -1,25 +1,20 @@
-/* @font-face {
-    font-family: 'Charter';
-    src: url('charter_regular.woff') format('woff');
-} */
-
 @font-face {
     font-family: 'Charter';
-    src: url('charter_bold.woff') format('woff');
+    src: url('./charter/charter_bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Charter';
-    src: url('charter_italic.woff') format('woff');
+    src: url('./charter/charter_italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Charter';
-    src: url('charter_regular.woff') format('woff');
+    src: url('./charter/charter_regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -52,15 +47,11 @@
 }
 
 @font-face {
-    font-family: 'Source Sans Pro';
-    src: url('./Source_Sans_Pro/SourceSansPro-Regular.ttf') format('truetype');
+    font-family: 'Halant';
+    src: url('./halant/Halant-Regular.woff2') format('woff2'),
+        url('./halant/Halant-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('./Source_Sans_Pro/SourceSansPro-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+    font-display: swap;
+    /* unicode-range: U+0900-097F; */
 }

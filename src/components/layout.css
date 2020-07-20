@@ -33,7 +33,7 @@ h5 {
 }
 
 h2 {
-    @apply font-bold text-xl;
+    @apply text-xl;
 }
 
 h3 {

@@ -76,12 +76,7 @@ function SEO({ description, lang, meta, title }): ReactElement {
                     content: metaDescription,
                 },
             ].concat(meta)}
-        >
-            <link
-                href="https://fonts.googleapis.com/css2?family=Martel:wght@200;400;700;900&family=Mulish:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,400&display=swap"
-                rel="stylesheet"
-            />
-        </Helmet>
+        ></Helmet>
     );
 }
 

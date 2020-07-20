@@ -89,6 +89,7 @@ module.exports = {
             ],
             serif: [
                 'Martel',
+                'Halant',
                 'Georgia',
                 'Cambria',
                 '"Times New Roman"',
@@ -105,6 +106,7 @@ module.exports = {
             ],
             'serif-formal': [
                 'Charter',
+                'Halant',
                 'Palatino',
                 '"Iowan Old Style"',
                 '"Book Antiqua"',
