@@ -27,7 +27,7 @@ function BlogIndex({ data, location }: Props): ReactElement {
                             className="border-l-2 border-solid border-coral-600 pl-4 md:ml-3 pr-2"
                             key={node.fields?.slug as string}
                         >
-                            <h2 className="mt-10 mb-1 text-2xl text-coral-600 leading-tight">
+                            <h2 className="mt-10 text-2xl text-coral-600 leading-tight">
                                 <Link to={node.fields?.slug as string}>
                                     {title}
                                 </Link>
