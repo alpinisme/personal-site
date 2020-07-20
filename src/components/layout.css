@@ -75,7 +75,7 @@ h5 {
 }
 
 .blog-post h2 {
-    @apply mt-6 mb-3;
+    @apply mt-6 mb-3 font-semibold;
     counter-reset: h3counter 0 h4counter 0 h5counter 0 h6counter 0;
 }
 
