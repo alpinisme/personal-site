@@ -19,10 +19,7 @@ const Bio = (): ReactElement => {
         <div className="flex items-center justify-center">
             <Icon className="mr-1 md:mr-2" />
             <p className="self-center mx-2">
-                Written by <strong>{author}</strong>. He doesn&rsquo;t like{' '}
-                <a className="link" href={`https://twitter.com/`}>
-                    Twitter
-                </a>
+                Written by <strong>{author}</strong>
             </p>
             <Icon className="ml-1 md:ml-2" />
         </div>
