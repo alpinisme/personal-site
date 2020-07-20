@@ -113,7 +113,7 @@ module.exports = {
                 'serif',
             ],
             'sans-formal': [
-                'freesans',
+                'FreeSans',
                 'Source Sans Pro',
                 'system-ui',
                 '-apple-system',
