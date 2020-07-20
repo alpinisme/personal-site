@@ -1,6 +1,6 @@
 ---
-title: Literatures of Asia and Africa I
+title: Literatures of Asia and Africa II
 school: University of Illinois at Urbana-Champaign
-summary: The first part of a two-semester survey of non-Western literary traditions.
+summary: The second part of a two-semester survey of non-Western literary traditions.
 description: Some thoughts.
 ---
