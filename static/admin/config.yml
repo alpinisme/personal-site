@@ -18,6 +18,31 @@ collections:
           - { label: 'Publish Date', name: 'date', widget: 'datetime' }
           - { label: 'Description', name: 'description', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
+    - name: 'presentation'
+      label: 'Presentation'
+      folder: 'content/presentation'
+      create: true
+      slug: '{{slug}}'
+      fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - {
+                label: 'Occasion',
+                name: 'occasion',
+                hint: 'E.g., Annual Meeting of Postcolonialists',
+                widget: 'string',
+            }
+          - {
+                label: 'Location',
+                name: 'location',
+                widget: 'string',
+                hint: 'E.g., Toronto or Harvard U',
+            }
+          - {
+                label: 'Date',
+                name: 'date',
+                widget: 'string',
+                hint: 'E.g. March 2020',
+            }
     - name: 'publication'
       label: 'Publication'
       folder: 'content/publication'
@@ -42,6 +67,21 @@ collections:
       slug: '{{slug}}'
       fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'School', name: 'school', widget: 'string' }
+          - {
+                label: 'School',
+                name: 'school',
+                widget: 'select',
+                options:
+                    [
+                        'University of Illinois at Urbana-Champaign',
+                        'Bradley University',
+                    ],
+            }
           - { label: 'Summary', name: 'summary', widget: 'string' }
+          - {
+                label: 'Most recent year taught',
+                name: 'year',
+                widget: 'string',
+                pattern: ['^(19|20)\d{2}$', 'Must be a valid year: YYYY'],
+            }
           - { label: 'Description', name: 'description', widget: 'markdown' }
