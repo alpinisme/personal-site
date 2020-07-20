@@ -115,6 +115,7 @@ module.exports = {
                 'serif',
             ],
             'sans-formal': [
+                'Avenir',
                 'FreeSans',
                 'Source Sans Pro',
                 'system-ui',
