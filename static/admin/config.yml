@@ -58,7 +58,7 @@ collections:
                 pattern: ['^(19|20)\d{2}$', 'Must be a valid year: YYYY'],
             }
           - { label: 'Link', name: 'link', widget: 'string', required: false }
-          - { label: 'Abstract', name: 'abstract', widget: 'markdown' }
+          - { label: 'Abstract', name: 'body', widget: 'markdown' }
           - { label: 'Full Citation', name: 'citation', widget: 'markdown' }
     - name: 'course'
       label: 'Course'
@@ -84,4 +84,4 @@ collections:
                 widget: 'string',
                 pattern: ['^(19|20)\d{2}$', 'Must be a valid year: YYYY'],
             }
-          - { label: 'Description', name: 'description', widget: 'markdown' }
+          - { label: 'Description', name: 'body', widget: 'markdown' }
