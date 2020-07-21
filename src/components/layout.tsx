@@ -32,9 +32,10 @@ function Layout({ location, title, children }: Props): ReactElement {
             </div>
 
             <footer className="text-sm text-ocean-300 my-2 self-center">
-                © {new Date().getFullYear()}, Built with
-                <a href="https://www.gatsbyjs.org"> Gatsby</a>, hosted on
-                <a href="https://www.netlify.com"> Netlify</a>
+                © {new Date().getFullYear()} M
+                <Link to={'/teaching/'} className="hidden">
+                    Teaching
+                </Link>
             </footer>
         </div>
     );
