@@ -6,9 +6,15 @@ interface Props {
     location: { pathname: string };
     title: string;
     children?: ReactElement[];
+    width?: string;
 }
 
-function Layout({ location, title, children }: Props): ReactElement {
+function Layout({
+    location,
+    title,
+    children,
+    width = 'w-11/12 md:w-9/12 lg:w-7/12 xl:w-6/12',
+}: Props): ReactElement {
     const rootPath = `${__PATH_PREFIX__}/`;
 
     const header =
@@ -26,7 +32,9 @@ function Layout({ location, title, children }: Props): ReactElement {
 
     return (
         <div className="bg-ocean-400 flex flex-col leading-normal">
-            <div className="mx-auto p-5 md:p-8 my-6 bg-gray-100 min-h-screen w-11/12 md:w-9/12 lg:w-7/12 xl:w-6/12 text-ocean-800 shadow-lg flex-auto">
+            <div
+                className={`mx-auto p-5 md:p-8 my-6 bg-gray-100 min-h-screen text-ocean-800 shadow-lg flex-auto ${width}`}
+            >
                 <header>{header}</header>
                 <main>{children}</main>
             </div>
