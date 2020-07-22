@@ -43,9 +43,7 @@ function TeachingIndex({ data, location }: TeachingIndexProps): ReactElement {
             width="w-11/12 md:w-10/12 lg:w-8/12 xl:w-7/12"
         >
             <SEO title="Teaching Experience" />
-            <h1 className="text-center text-3xl lg:text-4xl text-blue-600 my-10">
-                Teaching
-            </h1>
+            <h1 className="text-center text-3xl lg:text-4xl my-10">Teaching</h1>
             <h2 className="-mb-6 mt-8 text-center text-xl font-semibold text-ocean-600">
                 Past Courses
             </h2>
