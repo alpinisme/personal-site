@@ -29,7 +29,7 @@ h2 {
 h3,
 h4,
 h5 {
-    @apply text-coral-700;
+    @apply text-coral-700 text-lg;
 }
 
 h2 {
@@ -37,15 +37,15 @@ h2 {
 }
 
 h3 {
-    @apply text-lg italic;
+    @apply italic;
 }
 
 h4 {
-    @apply text-lg font-light;
+    @apply font-light;
 }
 
 h5 {
-    @apply text-lg font-light italic;
+    @apply font-light italic;
 }
 
 @tailwind components;
@@ -169,4 +169,22 @@ h5 {
     .blog-post blockquote {
         @apply mx-8 pl-5;
     }
+}
+
+/* course description */
+
+.course-description p + p {
+    @apply mt-4;
+}
+
+.course-description li {
+    @apply pl-2 ml-4 list-disc;
+}
+
+.course-description ul {
+    @apply my-2;
+}
+
+.course-description ul p {
+    @apply my-0;
 }
