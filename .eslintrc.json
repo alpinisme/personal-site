@@ -30,5 +30,7 @@
         "sourceType": "module"
     },
     "plugins": ["react", "@typescript-eslint", "prettier"],
-    "rules": {}
+    "rules": {
+        "react/no-unescaped-entities": 0
+    }
 }
