@@ -38,24 +38,34 @@ function TeachingIndex({ data, location }: TeachingIndexProps): ReactElement {
     const posts = data.allMarkdownRemark.edges;
 
     return (
-        <Layout location={location} title={siteTitle}>
+        <Layout
+            location={location}
+            title={siteTitle}
+            width="w-11/12 md:w-10/12 lg:w-8/12 xl:w-7/12"
+        >
             <SEO title="Teaching Experience" />
-            <Bio />
+            <h1 className="text-center text-2xl">Teaching</h1>
+            <h2 className="-mb-6 mt-8 text-center text-xl font-semibold text-ocean-600">
+                Past Courses
+            </h2>
             <>
                 {posts.map(({ node }) => {
                     const title = node.frontmatter?.title || node.fields?.slug;
                     return (
                         <div
-                            className="border-l-2 border-solid border-coral-600 pl-4 md:ml-3 pr-2"
+                            className="md:ml-3 flex items-stretch my-12"
                             key={node.fields?.slug as string}
                         >
-                            <h2 className="mt-10 text-2xl text-coral-600 leading-tight">
-                                <Link to={node.fields?.slug as string}>
-                                    {title}
-                                </Link>
-                            </h2>
+                            <div className="w-1/5">
+                                <h3
+                                    className="-ml-2 pr-3 pb-5 text-xl not-italic text-ocean-600 leading-tight text-right border-r-2 border-solid border-ocean-600"
+                                    dangerouslySetInnerHTML={{
+                                        __html: title,
+                                    }}
+                                />
+                            </div>
                             <div
-                                className="text-lg my-3 blog-post"
+                                className="ml-3 w-4/5 text-lg md:leading-relaxed course-description"
                                 dangerouslySetInnerHTML={{
                                     __html: node.html,
                                 }}
@@ -72,7 +82,10 @@ export default TeachingIndex;
 
 export const pageQuery = graphql`
     query TeachingIndex {
-        allMarkdownRemark(filter: { frontmatter: { school: { ne: null } } }) {
+        allMarkdownRemark(
+            filter: { frontmatter: { school: { ne: null } } }
+            sort: { order: DESC, fields: frontmatter___year }
+        ) {
             edges {
                 node {
                     html
