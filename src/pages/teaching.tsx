@@ -43,7 +43,9 @@ function TeachingIndex({ data, location }: TeachingIndexProps): ReactElement {
             width="w-11/12 md:w-10/12 lg:w-8/12 xl:w-7/12"
         >
             <SEO title="Teaching Experience" />
-            <h1 className="text-center text-2xl">Teaching</h1>
+            <h1 className="text-center text-3xl lg:text-4xl text-blue-600 my-10">
+                Teaching
+            </h1>
             <h2 className="-mb-6 mt-8 text-center text-xl font-semibold text-ocean-600">
                 Past Courses
             </h2>
@@ -56,7 +58,7 @@ function TeachingIndex({ data, location }: TeachingIndexProps): ReactElement {
                             key={node.fields.slug as string}
                         >
                             <dt className="md:w-1/5">
-                                <div className="pr-10 pl-4 mb-5 inline-block border-solid border-ocean-600 border-b-2 border-l-2 md:border-l-0 md:pl-0 md:pr-3 md:text-right md:border-b-0 md:border-r-2 ">
+                                <div className="pr-10 pl-4 mb-5 inline-block border-solid border-ocean-600 border-b-2 border-l-2 md:border-l-0 md:pl-0 md:pr-4 md:text-right md:border-b-0 md:border-r-2 ">
                                     <h3
                                         className="md:-ml-2 md:pb-3 text-xl not-italic text-ocean-600 leading-tight "
                                         dangerouslySetInnerHTML={{
@@ -69,7 +71,7 @@ function TeachingIndex({ data, location }: TeachingIndexProps): ReactElement {
                                 </div>
                             </dt>
                             <dd
-                                className="ml-4 md:ml-3 w-4/5 text-lg md:leading-relaxed course-description"
+                                className="ml-4 w-4/5 text-lg md:leading-relaxed course-description"
                                 dangerouslySetInnerHTML={{
                                     __html: node.html,
                                 }}
