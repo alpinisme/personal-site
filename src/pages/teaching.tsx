@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -48,24 +47,29 @@ function TeachingIndex({ data, location }: TeachingIndexProps): ReactElement {
             <h2 className="-mb-6 mt-8 text-center text-xl font-semibold text-ocean-600">
                 Past Courses
             </h2>
-            <>
+            <dl>
                 {posts.map(({ node }) => {
-                    const title = node.frontmatter?.title || node.fields?.slug;
+                    const title = node.frontmatter.title || node.fields.slug;
                     return (
                         <div
-                            className="md:ml-3 flex items-stretch my-12"
-                            key={node.fields?.slug as string}
+                            className="my-16 md:ml-3 md:flex md:items-stretch md:my-12"
+                            key={node.fields.slug as string}
                         >
-                            <div className="w-1/5">
-                                <h3
-                                    className="-ml-2 pr-3 pb-5 text-xl not-italic text-ocean-600 leading-tight text-right border-r-2 border-solid border-ocean-600"
-                                    dangerouslySetInnerHTML={{
-                                        __html: title,
-                                    }}
-                                />
-                            </div>
-                            <div
-                                className="ml-3 w-4/5 text-lg md:leading-relaxed course-description"
+                            <dt className="md:w-1/5">
+                                <div className="pr-10 pl-4 mb-5 inline-block border-solid border-ocean-600 border-b-2 border-l-2 md:border-l-0 md:pl-0 md:pr-3 md:text-right md:border-b-0 md:border-r-2 ">
+                                    <h3
+                                        className="md:-ml-2 md:pb-3 text-xl not-italic text-ocean-600 leading-tight "
+                                        dangerouslySetInnerHTML={{
+                                            __html: title,
+                                        }}
+                                    />
+                                    <small className="mt-1 pb-4 md:mt-0 md:pb-8 text-gray-700 text-sm block">
+                                        {node.frontmatter.school}
+                                    </small>
+                                </div>
+                            </dt>
+                            <dd
+                                className="ml-4 md:ml-3 w-4/5 text-lg md:leading-relaxed course-description"
                                 dangerouslySetInnerHTML={{
                                     __html: node.html,
                                 }}
@@ -73,7 +77,7 @@ function TeachingIndex({ data, location }: TeachingIndexProps): ReactElement {
                         </div>
                     );
                 })}
-            </>
+            </dl>
         </Layout>
     );
 }
