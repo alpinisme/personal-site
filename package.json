@@ -56,9 +56,8 @@
   "scripts": {
     "build": "gatsby build",
     "prod": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -p 8010",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "type-check": "tsc --noEmit"
