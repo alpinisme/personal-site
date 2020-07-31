@@ -5,9 +5,9 @@ year: "2017"
 link: https://doi.org/10.1163/24056480-00204004
 citation: >-
   “Life in a Dead Language: Modern Sanskrit as an Ultraminor Literature.”
-  Journal of World
+  *Journal of World
 
-  Literature, special section on Ultraminor Literatures, edited by David Damrosch and
+  Literature*, special section on "Ultraminor Literatures," edited by David Damrosch and
 
   Bergur Moberg, vol. 2, no. 4, 2017, pp. 411–432.
 ---
