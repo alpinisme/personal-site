@@ -174,11 +174,11 @@ h5 {
 /* course description */
 
 .course-description p + p {
-    @apply mt-4;
+    @apply mt-5;
 }
 
 .course-description li {
-    @apply pl-2 ml-4 list-disc;
+    @apply pl-2 ml-6 list-disc;
 }
 
 .course-description ul {
