@@ -3,9 +3,9 @@ title: At eirmod scripta sit
 date: 2020-07-18T04:52:09.014Z
 description: Some description should go here
 ---
-Lorem ipsum dolor sit amet, augue repudiare id mea, nam at volutpat torquatos, ponderum legendos accusamus at vel. Mollis definitiones te qui. Brute reque suscipiantur an vix, ius insolens expetenda principes et. Hinc nullam possim id nam. Usu ad aperiam commune, in sea dolor officiis democritum, graeci albucius id quo. Te hendrerit eloquentiam sea, vel cu velit falli facilisi.
+Lorem ipsum dolor sit amet, augue repudiare id mea, nam at volutpat torquatos, ponderum legendos accusamus at vel. Mollis definitiones te qui. Brute reque suscipiantur an vix, ius insolens expetenda principes et. Hinc nullam possim id nam.[>1] <span class='note'>My test sidenote. Let's make it long! eligendi iracundia theophrastus per ut, dolores assueverit inciderint te his. Eros ludus eligendi sit te, vim brute integre ad, agam ipsum civibus eos te. Eripuit equidem omnesque ad est. Phaedrum delicata pri id, no habeo delenit dolores eam, ei falli dissentiunt quo. </span> Usu ad aperiam commune, in sea dolor officiis democritum, graeci albucius id quo. Te hendrerit eloquentiam sea, vel cu velit falli facilisi.
 
-At eirmod scripta sit, in decore tacimates vituperata usu. Ex usu diam animal, cu persius aliquid nec. Ei dicam aliquando deterruisset est, ne hinc possim vel. Ex mel nihil repudiare, mea ceteros splendide vituperata eu. Nemore vivendum nec at, propriae assentior usu cu, dictas probatus persecuti mea cu.
+At eirmod scripta sit, in decore tacimates vituperata usu. Ex usu diam animal, cu persius aliquid nec.[>2] <span class='note'>My second test sidenote. Let's make it not quite as long eligendi iracundia theophrastus per ut. </span> Ei dicam aliquando deterruisset est, ne hinc possim vel. Ex mel nihil repudiare, mea ceteros splendide vituperata eu. Nemore vivendum nec at, propriae assentior usu cu, dictas probatus persecuti mea cu.
 
 No mei velit phaedrum expetenda, eligendi iracundia theophrastus per ut, dolores assueverit inciderint te his. Eros ludus eligendi sit te, vim brute integre ad, agam ipsum civibus eos te. Eripuit equidem omnesque ad est. Phaedrum delicata pri id, no habeo delenit dolores eam, ei falli dissentiunt quo. Eum oratio quodsi adolescens eu, quo in quod munere option.
 

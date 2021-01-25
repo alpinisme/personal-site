@@ -58,12 +58,97 @@ h5 {
     @apply text-xl font-light;
 }
 
+.note {
+    @apply hidden;
+    text-align: left;
+}
+
+.note-toggle:checked + .note {
+    display: block;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+    margin: 1rem 2.5%;
+    vertical-align: baseline;
+    position: relative;
+}
+
+
+
+.note-marker {
+    counter-increment: sidenote-counter;
+}
+
+.note-marker:after,
+.note:before {
+    /* font-family: et-book-roman-old-style; */
+    position: relative;
+    vertical-align: baseline;
+}
+
+.note-marker:after {
+    content: counter(sidenote-counter);
+    font-size: 1rem;
+    top: -0.5rem;
+    left: 0.1rem;
+}
+
+.note:before {
+    content: "[" counter(sidenote-counter) "] ";
+    font-size: 1rem;
+    top: -0.5rem;
+        margin-left: -1.8rem;
+}
+
+input.note-toggle {
+    display: none;
+}
+
+label.note-marker {
+    display: inline;
+}
+
+label.note-toggle:not(.note-marker) {
+    display: none;
+}
+
+@screen lg {
+
+    .blog-post .note-toggle + .note {
+        @apply text-orange-100;
+        display: initial;
+        float: right;
+        clear: right;
+        margin-right: -60%;
+        left: 0;
+        width: 50%;
+        margin-top: 0.3rem;
+        margin-bottom: 0;
+        margin-left: inherit;
+        font-size: 1.1rem;
+        line-height: 1.3;
+        vertical-align: baseline;
+        position: relative;
+        padding-left: 2rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.3rem;
+        padding-right: 0.5rem;
+    }
+
+    .note-toggle:checked + .note {
+        @apply bg-gray-100 text-blue-900;
+    }
+
+}
+
 @tailwind utilities;
 
 /* blog post styling -- for markdown posts */
 
 .blog-post {
     counter-reset: h2counter;
+    counter-reset: sidenote-counter;
 }
 
 .blog-post p {
@@ -174,7 +259,7 @@ h5 {
 /* course description */
 
 .course-description p + p {
-    @apply mt-5;
+    @apply mt-4;
 }
 
 .course-description li {

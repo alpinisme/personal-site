@@ -29,6 +29,12 @@ interface Props {
     };
 }
 
+function convertNoteFormatting(html: string) {
+    const markup = (id: string) => `<label for="note-${id}" class="note-toggle note-marker"></label><input type="checkbox" id="note-${id}"class="note-toggle"/>`
+    const regex = /\[>\d+\]/g;
+    return html.replaceAll(regex, match => markup(match.slice(2, -1)));
+}
+
 function BlogPostTemplate({
     data,
     location,
@@ -37,6 +43,7 @@ function BlogPostTemplate({
     const post = data.markdownRemark;
     const siteTitle = data.site?.siteMetadata?.title as string;
     const { previous, next } = pageContext;
+    const html = convertNoteFormatting(post?.html || '');
 
     return (
         <Layout location={location} title={siteTitle}>
@@ -54,7 +61,7 @@ function BlogPostTemplate({
             </p>
             <article
                 className="blog-post my-8 md:p-2 lg:text-justify hyphens-manual"
-                dangerouslySetInnerHTML={{ __html: post?.html as string }}
+                dangerouslySetInnerHTML={{ __html: html }}
             />
             <Bio />
 

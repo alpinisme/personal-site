@@ -13,7 +13,7 @@ function Layout({
     location,
     title,
     children,
-    width = 'w-11/12 md:w-9/12 lg:w-7/12 xl:w-6/12',
+    width = 'w-11/12 md:w-10/12 lg:w-9/12 xl:w-7/12',
 }: Props): ReactElement {
     const rootPath = `${__PATH_PREFIX__}/`;
 
@@ -31,7 +31,7 @@ function Layout({
         );
 
     return (
-        <div className="bg-ocean-400 flex flex-col leading-normal">
+        <div className="bg-ocean-400 flex flex-col leading-normal lg:pr-64">
             <div
                 className={`mx-auto p-5 md:p-8 my-6 bg-gray-100 min-h-screen text-ocean-800 shadow-lg flex-auto ${width}`}
             >
