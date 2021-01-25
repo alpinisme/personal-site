@@ -29,10 +29,32 @@ interface Props {
     };
 }
 
+/**
+ * String.prototype.replaceAll() polyfill
+ * https://gomakethings.com/how-to-replace-a-section-of-a-string-with-another-one-with-vanilla-js/
+ * @author Chris Ferdinandi
+ * @license MIT
+ */
+if (!String.prototype.replaceAll) {
+    String.prototype.replaceAll = function (str, newStr) {
+        // If a regex pattern
+        if (
+            Object.prototype.toString.call(str).toLowerCase() ===
+            '[object regexp]'
+        ) {
+            return this.replace(str, newStr);
+        }
+
+        // If a string
+        return this.replace(new RegExp(str, 'g'), newStr);
+    };
+}
+
 function convertNoteFormatting(html: string) {
-    const markup = (id: string) => `<label for="note-${id}" class="note-toggle note-marker"></label><input type="checkbox" id="note-${id}"class="note-toggle"/>`
+    const markup = (id: string) =>
+        `<label for="note-${id}" class="note-toggle note-marker"></label><input type="checkbox" id="note-${id}"class="note-toggle"/>`;
     const regex = /\[>\d+\]/g;
-    return html.replaceAll(regex, match => markup(match.slice(2, -1)));
+    return html.replaceAll(regex, (match) => markup(match.slice(2, -1)));
 }
 
 function BlogPostTemplate({
