@@ -74,8 +74,6 @@ h5 {
     position: relative;
 }
 
-
-
 .note-marker {
     counter-increment: sidenote-counter;
 }
@@ -95,10 +93,10 @@ h5 {
 }
 
 .note:before {
-    content: "[" counter(sidenote-counter) "] ";
+    content: '[' counter(sidenote-counter) '] ';
     font-size: 1rem;
     top: -0.5rem;
-        margin-left: -1.8rem;
+    margin-left: -1.8rem;
 }
 
 input.note-toggle {
@@ -114,9 +112,8 @@ label.note-toggle:not(.note-marker) {
 }
 
 @screen lg {
-
     .blog-post .note-toggle + .note {
-        @apply text-orange-100;
+        @apply text-coral-100;
         display: initial;
         float: right;
         clear: right;
@@ -139,7 +136,6 @@ label.note-toggle:not(.note-marker) {
     .note-toggle:checked + .note {
         @apply bg-gray-100 text-blue-900;
     }
-
 }
 
 @tailwind utilities;
