@@ -14,14 +14,6 @@ body {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5 {
-    @apply font-sans-formal;
-}
-
-h1,
 h2 {
     @apply text-coral-600;
 }
