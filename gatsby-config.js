@@ -79,7 +79,7 @@ module.exports = {
             resolve: 'gatsby-plugin-web-font-loader',
             options: {
                 custom: {
-                    families: ['Charter', 'FreeSans', 'Halant'],
+                    families: ['Charter', 'FreeSans', 'Halant', 'et-book'],
                     urls: ['/fonts/fonts.css'],
                 },
             },
