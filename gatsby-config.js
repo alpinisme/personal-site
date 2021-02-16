@@ -1,10 +1,11 @@
 module.exports = {
     siteMetadata: {
-        title: `M's Blog`,
+        title: `A Secluded Soapbox`,
         author: `M`,
-        description: `A work in progress.`,
+        description: `A place for quotes, notes, and cavils of questionable value.`,
         siteUrl: `https://nelson-m.com/`,
     },
+    flags: { PRESERVE_WEBPACK_CACHE: true },
     plugins: [
         {
             resolve: `gatsby-source-filesystem`,

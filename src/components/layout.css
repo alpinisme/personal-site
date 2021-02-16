@@ -43,7 +43,7 @@ h5 {
 @tailwind components;
 
 .link {
-    @apply text-blue-500 underline;
+    @apply text-ocean-700 underline;
 }
 
 .hindi {
@@ -222,11 +222,11 @@ label.note-toggle:not(.note-marker) {
 
 .blog-post ul ::marker,
 .blog-post ol ::marker {
-    @apply text-ocean-600;
+    @apply text-ocean-400;
 }
 
 .blog-post blockquote {
-    @apply mx-4 pl-3 border-l-2 border-solid border-ocean-500;
+    @apply mx-4 pl-3 border-l-2 border-solid border-ocean-400;
 }
 
 @screen md {

@@ -91,7 +91,7 @@ function BlogPostTemplate({
                 <li>
                     {previous && (
                         <Link
-                            className="text-green-500 text-lg ml-2"
+                            className="text-coral-600 text-lg ml-2"
                             to={previous.fields.slug}
                             rel="prev"
                         >
@@ -102,7 +102,7 @@ function BlogPostTemplate({
                 <li>
                     {next && (
                         <Link
-                            className="text-green-500 text-lg mr-2"
+                            className="text-coral-600 text-lg mr-2"
                             to={next.fields.slug}
                             rel="next"
                         >
