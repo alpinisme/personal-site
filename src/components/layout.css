@@ -10,7 +10,7 @@ body ::selection {
 }
 
 body {
-    @apply text-lg font-serif-formal text-ocean-800 bg-ocean-800;
+    @apply text-lg font-serif-formal text-ocean-800 bg-ocean-400;
 }
 
 h1,
@@ -43,7 +43,7 @@ h5 {
 @tailwind components;
 
 .link {
-    @apply text-cerise-700 underline;
+    @apply text-ocean-500 underline;
 }
 
 .hindi {

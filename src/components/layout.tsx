@@ -31,7 +31,7 @@ function Layout({
         );
 
     return (
-        <div className="bg-ocean-400 flex flex-col leading-normal lg:pr-64">
+        <div className="flex flex-col leading-normal lg:pr-64">
             <div
                 className={`mx-auto p-5 md:p-8 my-6 bg-gray-100 min-h-screen text-ocean-800 shadow-lg flex-auto ${width}`}
             >

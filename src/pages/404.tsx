@@ -16,8 +16,11 @@ function NotFoundPage({ data, location }: Props): ReactElement {
     return (
         <Layout location={location} title={siteTitle}>
             <SEO title="404: Not Found" />
-            <h1>Not Found</h1>
-            <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+            <h1 className="text-center text-2xl my-12">Not Found</h1>
+            <p className="text-center">
+                Unfortunately for you, this page doesn't exist. <br />
+                If it's also unfortunate for me, let me know and I'll fix it!
+            </p>
         </Layout>
     );
 }
