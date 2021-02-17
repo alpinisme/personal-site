@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 export default function Icon({ className }: Props): ReactElement {
     return (
         <svg
-            className={`stroke-current stroke-2 w-3 transform rotate-45 text-green-600 ${className}`}
+            className={`stroke-current stroke-2 w-3 transform rotate-45 text-cerise-800 ${className}`}
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

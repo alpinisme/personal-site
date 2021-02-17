@@ -1,11 +1,16 @@
 module.exports = {
     siteMetadata: {
-        title: `A Secluded Soapbox`,
+        title: `Secluded Soapbox`,
         author: `M`,
-        description: `A place for quotes, notes, and cavils of questionable value.`,
+        description: `A place for notes, quotes, and cavils of questionable value.`,
         siteUrl: `https://nelson-m.com/`,
     },
-    flags: { PRESERVE_WEBPACK_CACHE: true },
+    flags: {
+        PRESERVE_WEBPACK_CACHE: true,
+        FAST_REFRESH: true,
+        FAST_DEV: true,
+        DEV_SSR: true,
+    },
     plugins: [
         {
             resolve: `gatsby-source-filesystem`,

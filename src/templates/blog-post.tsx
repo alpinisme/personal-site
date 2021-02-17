@@ -66,32 +66,38 @@ function BlogPostTemplate({
     const siteTitle = data.site?.siteMetadata?.title as string;
     const { previous, next } = pageContext;
     const html = convertNoteFormatting(post?.html || '');
+    const description =
+        post?.frontmatter?.description ||
+        post?.excerpt ||
+        `A blog post at ${siteTitle}`;
 
     return (
         <Layout location={location} title={siteTitle}>
             <SEO
                 title={post?.frontmatter?.title as string}
-                description={
-                    post?.frontmatter?.description || (post?.excerpt as string)
-                }
+                description={description}
             />
-            <h1 className="text-coral-600 text-3xl font-black mt-8 mb-2 text-center">
-                {post?.frontmatter?.title as string}
+
+            <h1 className="text-cerise-700 text-3xl font-black mt-8 mb-2 text-center">
+                {post?.frontmatter?.title}
             </h1>
+
             <p className="text-ocean-500 text-sm mb-2 text-center">
                 {post?.frontmatter?.date}
             </p>
+
             <article
                 className="blog-post my-8 md:p-2 lg:text-justify hyphens-manual"
                 dangerouslySetInnerHTML={{ __html: html }}
             />
+
             <Bio />
 
             <ul className="flex flex-wrap justify-between my-8">
                 <li>
                     {previous && (
                         <Link
-                            className="text-coral-600 text-lg ml-2"
+                            className="text-cerise-700 text-lg ml-2"
                             to={previous.fields.slug}
                             rel="prev"
                         >
@@ -102,7 +108,7 @@ function BlogPostTemplate({
                 <li>
                     {next && (
                         <Link
-                            className="text-coral-600 text-lg mr-2"
+                            className="text-cerise-700 text-lg mr-2"
                             to={next.fields.slug}
                             rel="next"
                         >

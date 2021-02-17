@@ -19,7 +19,7 @@ function Layout({
 
     const header =
         location.pathname === rootPath ? (
-            <h1 className="text-4xl font-black mt-12 mb-6 text-center">
+            <h1 className="text-4xl font-bold mt-12 mb-6 text-center">
                 <Link to={`/`}>{title}</Link>
             </h1>
         ) : (

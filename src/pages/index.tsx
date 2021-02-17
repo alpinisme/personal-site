@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import { Link, graphql } from 'gatsby';
 import { BlogIndexQuery } from '../../graphql-types';
 
-import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -13,21 +12,24 @@ interface Props {
 
 function BlogIndex({ data, location }: Props): ReactElement {
     const siteTitle = data.site?.siteMetadata?.title as string;
+    const siteDescription = data.site?.siteMetadata?.description;
     const posts = data.allMarkdownRemark.edges;
 
     return (
         <Layout location={location} title={siteTitle}>
             <SEO title="All posts" />
-            <Bio />
+            <div className="text-center italic mb-16 w-64 mx-auto text-base">
+                {siteDescription}
+            </div>
             <>
                 {posts.map(({ node }) => {
                     const title = node.frontmatter?.title || node.fields?.slug;
                     return (
                         <div
-                            className="border-l-2 border-solid border-coral-600 pl-4 md:ml-3 pr-2"
+                            className="border-l-2 border-solid border-cerise-700 pl-4 md:ml-3 pr-2"
                             key={node.fields?.slug as string}
                         >
-                            <h2 className="mt-10 text-2xl text-coral-600 leading-tight">
+                            <h2 className="mt-10 text-2xl text-cerise-700 leading-tight">
                                 <Link to={node.fields?.slug as string}>
                                     {title}
                                 </Link>
@@ -58,6 +60,7 @@ export const pageQuery = graphql`
         site {
             siteMetadata {
                 title
+                description
             }
         }
         allMarkdownRemark(
