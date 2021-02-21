@@ -1,84 +1,57 @@
+import { graphql, Link } from 'gatsby';
 import React, { ReactElement } from 'react';
-import { Link, graphql } from 'gatsby';
-import { BlogIndexQuery } from '../../graphql-types';
-
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-interface Props {
-    data: BlogIndexQuery;
-    location: { pathname: string };
-}
-
-function BlogIndex({ data, location }: Props): ReactElement {
-    const siteTitle = data.site?.siteMetadata?.title as string;
-    const siteDescription = data.site?.siteMetadata?.description;
-    const posts = data.allMarkdownRemark.edges;
+export default function LandingPage(props: Props): ReactElement {
+    const name = props.data.site.siteMetadata.author;
 
     return (
-        <Layout location={location} title={siteTitle}>
-            <SEO title="All posts" />
-            <div className="text-center italic mb-16 w-64 mx-auto text-base">
-                {siteDescription}
+        <div className="font-sans bg-ocean-800 min-h-screen p-6">
+            <div className="md:w-2/3 lg:w-1/2 xl:w-1/3 mx-auto">
+                <SEO title="Home" />
+                <h1 className="text-5xl text-ocean-100 my-20">
+                    Hi, I’m {name}.
+                </h1>
+                <h2 className="text-3xl text-cerise-500 my-10">
+                    I’m a <Link to="/teaching">teacher</Link>,{' '}
+                    <Link to="/research">scholar</Link>, and{' '}
+                    <Link to="/dev">developer</Link>.{' '}
+                </h2>
+                <p className="text-ocean-100 my-6">
+                    I’m also an experienced <Link to="editing">editor</Link> and
+                    occasional translator.
+                </p>
+                <p className="text-ocean-100 my-6">
+                    If you’d like to work with me or have any questions, I’d
+                    love to <Link to="/contact">hear from you</Link>.
+                </p>
+                <p className="text-ocean-100 my-6">
+                    While you’re at it, be sure to check out my{' '}
+                    <Link to="/blog">blog</Link> too.
+                </p>
             </div>
-            <>
-                {posts.map(({ node }) => {
-                    const title = node.frontmatter?.title || node.fields?.slug;
-                    return (
-                        <div
-                            className="border-l-2 border-solid border-cerise-700 pl-4 md:ml-3 pr-2"
-                            key={node.fields?.slug as string}
-                        >
-                            <h2 className="mt-10 text-2xl text-cerise-700 leading-tight">
-                                <Link to={node.fields?.slug as string}>
-                                    {title}
-                                </Link>
-                            </h2>
-                            <small className="text-sm text-gray-700">
-                                {node.frontmatter?.date}
-                            </small>
-                            <p
-                                className="text-lg my-3"
-                                dangerouslySetInnerHTML={{
-                                    __html:
-                                        node.frontmatter?.description ||
-                                        (node.excerpt as string),
-                                }}
-                            />
-                        </div>
-                    );
-                })}
-            </>
-        </Layout>
+        </div>
     );
 }
 
-export default BlogIndex;
+interface Props {
+    location: { pathname: string };
+    data: {
+        site: {
+            siteMetadata: {
+                title: string;
+                author: string;
+            };
+        };
+    };
+}
 
 export const pageQuery = graphql`
-    query BlogIndex {
+    query LandingPage {
         site {
             siteMetadata {
                 title
-                description
-            }
-        }
-        allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { fileAbsolutePath: { regex: "/content/blog/" } }
-        ) {
-            edges {
-                node {
-                    excerpt
-                    fields {
-                        slug
-                    }
-                    frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
-                        title
-                        description
-                    }
-                }
+                author
             }
         }
     }
