@@ -44,6 +44,9 @@ function Layout({
                 <Link to={'/teaching/'} className="hidden">
                     Teaching
                 </Link>
+                <Link to={'/contact/'} className="hidden">
+                    Teaching
+                </Link>
             </footer>
         </div>
     );

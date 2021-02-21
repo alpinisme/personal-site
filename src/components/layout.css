@@ -40,6 +40,28 @@ h5 {
     @apply font-light italic;
 }
 
+input {
+    @apply h-9;
+}
+
+input,
+textarea {
+    @apply border-ocean-700 border border-solid w-full mt-1 px-1;
+}
+
+:-moz-ui-invalid {
+    @apply border-cerise-700;
+}
+
+input:focus,
+textarea:focus {
+    @apply border-ocean-400 border-2 outline-none;
+}
+
+button[type='submit'] {
+    @apply px-6 py-3 bg-cerise-700 text-white font-bold rounded-md shadow  hover:border-cerise-600 border border-solid;
+}
+
 @tailwind components;
 
 .link {
