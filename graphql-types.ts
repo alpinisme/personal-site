@@ -3394,6 +3394,11 @@ export type BlogIndexQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSite
         & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'description'>> }
       ) }> } };
 
+export type LandingPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LandingPageQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'author'>> }> };
+
 export type TeachingIndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 

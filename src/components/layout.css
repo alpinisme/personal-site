@@ -62,6 +62,10 @@ button[type='submit'] {
     @apply px-6 py-3 bg-cerise-700 text-white font-bold rounded-md shadow  hover:border-cerise-600 border border-solid;
 }
 
+a {
+    @apply underline;
+}
+
 @tailwind components;
 
 .link {
