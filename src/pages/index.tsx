@@ -8,6 +8,7 @@ export default function LandingPage(props: Props): ReactElement {
 
     return (
         <div className="font-sans bg-ocean-800 min-h-screen lg:h-screen lg:overflow-hidden flex flex-col">
+            <SEO title="Home" />
             <div className="w-screen">
                 <Img
                     fluid={props.data.shoreline.childImageSharp.fluid}
@@ -35,7 +36,7 @@ export default function LandingPage(props: Props): ReactElement {
                         <Link to="/research">scholar</Link>, and{' '}
                         <Link to="/dev">developer</Link>.{' '}
                     </h2>
-                    <p className="text-ocean-100 my-4">
+                    <p className="text-ocean-100 mb-4 mt-6">
                         I’m also an experienced{' '}
                         <Link to="editing" className="text-cerise-400">
                             editor

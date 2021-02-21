@@ -30,7 +30,10 @@ function BlogIndex({ data, location }: Props): ReactElement {
                             key={node.fields?.slug as string}
                         >
                             <h2 className="mt-10 text-2xl text-cerise-700 leading-tight">
-                                <Link to={node.fields?.slug as string}>
+                                <Link
+                                    to={node.fields?.slug as string}
+                                    className="no-underline"
+                                >
                                     {title}
                                 </Link>
                             </h2>
