@@ -2,7 +2,7 @@ import { graphql, Link } from 'gatsby';
 import React, { ReactElement } from 'react';
 import SEO from '../components/seo';
 import Img, { FluidObject } from 'gatsby-image';
-import './layout.css';
+import '../components/layout.css';
 
 export default function LandingPage(props: Props): ReactElement {
     const name = props.data.site.siteMetadata.author;
