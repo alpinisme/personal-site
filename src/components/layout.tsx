@@ -15,10 +15,8 @@ function Layout({
     children,
     width = 'w-11/12 md:w-10/12 lg:w-9/12 xl:w-7/12',
 }: Props): ReactElement {
-    const rootPath = `${__PATH_PREFIX__}/`;
-
     const header =
-        location.pathname === rootPath ? (
+        location.pathname === 'blog' ? (
             <h1 className="text-4xl font-bold mt-12 mb-6 text-center">
                 <Link to={`/`} className="no-underline">
                     {title}
