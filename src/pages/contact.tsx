@@ -8,6 +8,7 @@ export default function Contact({ location }: Props): ReactElement {
         event.preventDefault();
         const form = event.target as HTMLFormElement;
         const body = new FormData(form);
+        body.set('form-name', 'contact');
         fetch('/', { method: 'POST', body })
             .then((res) => console.log('success!', res))
             .catch((error) => alert(error));
