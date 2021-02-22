@@ -21,6 +21,9 @@ interface ResearchPageProps {
         presentations: {
             edges: Array<{ node: Presentation }>;
         };
+        translations: {
+            edges: Array<{ node: Translation }>;
+        };
     };
 }
 
@@ -46,12 +49,23 @@ interface Presentation {
     };
 }
 
+interface Translation {
+    frontmatter: {
+        title: string;
+        venue: string;
+        author: string;
+        year: string;
+        link: string;
+    };
+}
+
 export default function Research({
     data,
     location,
 }: ResearchPageProps): ReactElement {
     const publications = data.publications.edges.map((each) => each.node);
     const presentations = data.presentations.edges.map((each) => each.node);
+    const translations = data.translations.edges.map((each) => each.node);
 
     const publicationList = (
         <>
@@ -88,6 +102,29 @@ export default function Research({
         </>
     );
 
+    const translationList = (
+        <>
+            {translations.map((trans) => (
+                <div
+                    key={trans.frontmatter.title}
+                    className="my-6 pl-12 -indent-4"
+                >
+                    {trans.frontmatter.link ? (
+                        <a href={trans.frontmatter.link}>
+                            pres.frontmatter.author
+                        </a>
+                    ) : (
+                        trans.frontmatter.author
+                    )}
+                    {', '}
+                    &ldquo;{trans.frontmatter.title}.&rdquo;{' '}
+                    <span className="italic">{trans.frontmatter.venue},</span>{' '}
+                    {trans.frontmatter.year}.
+                </div>
+            ))}
+        </>
+    );
+
     return (
         <Layout
             location={location}
@@ -101,6 +138,11 @@ export default function Research({
                 Publications
             </h2>
             {publicationList}
+
+            <h2 className=" mt-8 text-center text-xl font-semibold text-ocean-600">
+                Translations
+            </h2>
+            {translationList}
 
             <h2 className="mt-8 text-center text-xl font-semibold text-ocean-600">
                 Presentations
@@ -153,6 +195,22 @@ export const pageQuery = graphql`
                         title
                         location
                         role
+                    }
+                }
+            }
+        }
+        translations: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/content/translation/" } }
+            sort: { order: DESC, fields: frontmatter___year }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        year
+                        venue
+                        title
+                        author
+                        link
                     }
                 }
             }
