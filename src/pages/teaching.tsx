@@ -56,12 +56,10 @@ function TeachingIndex({ data, location }: TeachingIndexProps): ReactElement {
                         >
                             <dt className="md:w-1/5">
                                 <div className="pr-10 pl-4 mb-5 inline-block border-solid border-ocean-600 border-b-2 border-l-2 md:border-l-0 md:pl-0 md:pr-4 md:text-right md:border-b-0 md:border-r-2 ">
-                                    <h3
-                                        className="md:-ml-2 md:pb-3 text-xl not-italic text-ocean-600 leading-tight "
-                                        dangerouslySetInnerHTML={{
-                                            __html: title,
-                                        }}
-                                    />
+                                    <h3 className="md:-ml-2 md:pb-3 text-xl not-italic text-ocean-600 leading-tight ">
+                                        {title}
+                                    </h3>
+
                                     <small className="mt-1 pb-4 md:mt-0 md:pb-8 text-gray-700 text-sm block">
                                         {node.frontmatter.school}
                                     </small>
