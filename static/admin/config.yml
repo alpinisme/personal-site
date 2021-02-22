@@ -38,10 +38,22 @@ collections:
                 hint: 'E.g., Toronto or Harvard U',
             }
           - {
-                label: 'Date',
-                name: 'date',
+                label: 'Year',
+                name: 'year',
                 widget: 'string',
-                hint: 'E.g. March 2020',
+                pattern: ['^(19|20)\d{2}$', 'Must be a valid year: YYYY'],
+            }
+          - {
+                label: 'Month',
+                name: 'month',
+                widget: 'string',
+                hint: 'March or September',
+            }
+          - {
+                label: 'Role',
+                name: 'role',
+                widget: 'string',
+                hint: 'E.g., "Coorganizer" if not a typical presentation',
             }
     - name: 'publication'
       label: 'Publication'
@@ -58,8 +70,8 @@ collections:
                 pattern: ['^(19|20)\d{2}$', 'Must be a valid year: YYYY'],
             }
           - { label: 'Link', name: 'link', widget: 'string', required: false }
-          - { label: 'Abstract', name: 'body', widget: 'markdown' }
-          - { label: 'Full Citation', name: 'citation', widget: 'markdown' }
+          - { label: 'Abstract', name: 'abstract', widget: 'markdown' }
+          - { label: 'Full Citation', name: 'body', widget: 'markdown' }
     - name: 'course'
       label: 'Course'
       folder: 'content/course'

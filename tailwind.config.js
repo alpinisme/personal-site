@@ -2,12 +2,14 @@ module.exports = {
     purge: ['./src/**/*.js', './src/**/*.tsx'],
     theme: {
         textIndent: {
+            '-4': '-3rem',
             '-3': '-2rem',
             '-2': '-1rem',
             '-1': '-0.5rem',
             1: '0.5rem',
             2: '1rem',
             3: '2rem',
+            4: '3rem',
         },
         fontVariantLigatures: {},
         textRendering: {},

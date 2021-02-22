@@ -35,6 +35,20 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/content/publication`,
+                name: `publication`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/content/presentation`,
+                name: `publication`,
+            },
+        },
+        {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
