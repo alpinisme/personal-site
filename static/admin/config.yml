@@ -56,6 +56,24 @@ collections:
                 required: false,
                 hint: 'E.g., "Coorganizer" if not a typical presentation',
             }
+    - name: 'translation'
+      label: 'Translation'
+      folder: 'content/translation'
+      create: true
+      slug: '{{slug}}'
+      fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Venue', name: 'venue', widget: 'string' }
+          - { label: 'Author', name: 'author', widget: 'string' }
+          - {
+                label: 'Publish Year',
+                name: 'year',
+                widget: 'string',
+                pattern: ['^(19|20)\d{2}$', 'Must be a valid year: YYYY'],
+            }
+          - { label: 'Link', name: 'link', widget: 'string', required: false }
+          - { label: 'Abstract', name: 'abstract', widget: 'markdown' }
+          - { label: 'Full Citation', name: 'body', widget: 'markdown' }
     - name: 'publication'
       label: 'Publication'
       folder: 'content/publication'
