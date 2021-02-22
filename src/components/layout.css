@@ -10,7 +10,7 @@ body ::selection {
 }
 
 body {
-    @apply text-lg font-serif-formal text-ocean-800 bg-ocean-400;
+    @apply text-lg font-serif-formal text-ocean-800 bg-ocean-700;
 }
 
 h1,

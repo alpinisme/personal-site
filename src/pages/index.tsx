@@ -15,18 +15,18 @@ export default function LandingPage(props: Props): ReactElement {
                     fluid={props.data.shoreline.childImageSharp.fluid}
                     alt="An image of me on some rocks at the beach"
                     style={{
-                        'clip-path': 'ellipse(98% 58% at 48% 42%)',
+                        clipPath: 'ellipse(98% 58% at 48% 42%)',
                         transform: 'scaleX(-1)',
                     }}
                 />
             </div>
             <div className="p-6 flex-auto lg:flex lg:justify-around">
-                <div className="text-center self-center">
+                <div className="text-center self-center lg:mr-24">
                     <SEO title="Home" />
                     <h1 className="text-5xl text-ocean-100 mt-10 mb-10 lg:mt-0">
-                        Hi, I’m {name}.
+                        Hi, I’m {name}
                     </h1>
-                    <div className="mx-auto mb-10 w-1/2 lg:h-full lg:w-full lg:m-0">
+                    <div className="mx-auto mb-10 w-1/2 lg:h-full lg:w-full xl:w-4/5 lg:m-0 lg:mt-2">
                         <Img
                             fluid={props.data.profile.childImageSharp.fluid}
                             alt="A photo of me"
@@ -48,12 +48,12 @@ export default function LandingPage(props: Props): ReactElement {
                         and occasional translator.
                     </p>
                     <p className="text-ocean-100 my-4">
-                        If you’d like to work with me or have any questions, I’d
-                        love to{' '}
                         <Link to="/contact" className="text-cerise-400">
-                            hear from you
-                        </Link>
-                        .
+                            Get in touch
+                        </Link>{' '}
+                        if you'd like to work with me, or if you have any
+                        questions or thoughts to share. I'd love to hear from
+                        you.
                     </p>
                     <p className="text-ocean-100 my-4">
                         While you’re at it, be sure to check out my{' '}

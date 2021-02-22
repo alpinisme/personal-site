@@ -1,7 +1,8 @@
 module.exports = {
     siteMetadata: {
-        title: `Secluded Soapbox`,
-        author: `M`,
+        title: `Matt Nelson`,
+        blogName: `Secluded Soapbox`,
+        author: `Matt Nelson`,
         description: `A place for notes, quotes, and cavils of questionable value.`,
         siteUrl: `https://nelson-m.com/`,
     },
@@ -85,7 +86,7 @@ module.exports = {
             resolve: 'gatsby-plugin-web-font-loader',
             options: {
                 custom: {
-                    families: ['Charter', 'FreeSans', 'Halant', 'et-book'],
+                    families: ['Charter', 'Lato', 'Halant'],
                     urls: ['/fonts/fonts.css'],
                 },
             },

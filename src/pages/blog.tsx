@@ -11,12 +11,12 @@ interface Props {
 }
 
 function BlogIndex({ data, location }: Props): ReactElement {
-    const siteTitle = data.site?.siteMetadata?.title as string;
+    const blogName = data.site?.siteMetadata?.blogName as string;
     const siteDescription = data.site?.siteMetadata?.description;
     const posts = data.allMarkdownRemark.edges;
 
     return (
-        <Layout location={location} title={siteTitle}>
+        <Layout location={location} title={blogName}>
             <SEO title="All posts" />
             <div className="text-center italic mb-16 w-64 mx-auto text-base">
                 {siteDescription}
@@ -62,7 +62,7 @@ export const pageQuery = graphql`
     query BlogIndex {
         site {
             siteMetadata {
-                title
+                blogName
                 description
             }
         }

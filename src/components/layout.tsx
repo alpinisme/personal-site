@@ -15,17 +15,20 @@ function Layout({
     children,
     width = 'w-11/12 md:w-10/12 lg:w-9/12 xl:w-7/12',
 }: Props): ReactElement {
+    const isInBlog = location.pathname.startsWith('/blog');
+    const homePath = isInBlog ? '/blog' : '/';
+
     const header =
         location.pathname === '/blog' ? (
             <h1 className="text-4xl font-bold mt-12 mb-6 text-center">
-                <Link to={`/`} className="no-underline">
+                <Link to={homePath} className="no-underline">
                     {title}
                 </Link>
             </h1>
         ) : (
             <h3>
                 <Link
-                    to={`/`}
+                    to={homePath}
                     className="text-ocean-800 text-base not-italic no-underline"
                 >
                     Back to {title}
