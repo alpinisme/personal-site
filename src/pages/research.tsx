@@ -60,13 +60,13 @@ export default function Research({
                         <a href={pub.frontmatter.link}>
                             {pub.frontmatter.title}
                         </a>
-                        .{' '}
+                        ,{' '}
                         <span className="italic">{pub.frontmatter.venue}.</span>{' '}
-                        {pub.frontmatter.year},
+                        {pub.frontmatter.year}.
                     </div>
                     <p className="mt-2">{pub.frontmatter.abstract}</p>
                 </div>
-            ))}{' '}
+            ))}
         </>
     );
 
