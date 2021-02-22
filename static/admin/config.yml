@@ -72,8 +72,6 @@ collections:
                 pattern: ['^(19|20)\d{2}$', 'Must be a valid year: YYYY'],
             }
           - { label: 'Link', name: 'link', widget: 'string', required: false }
-          - { label: 'Abstract', name: 'abstract', widget: 'markdown' }
-          - { label: 'Full Citation', name: 'body', widget: 'markdown' }
     - name: 'publication'
       label: 'Publication'
       folder: 'content/publication'
