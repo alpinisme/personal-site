@@ -554,6 +554,7 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___occasion'
   | 'childrenMarkdownRemark___frontmatter___location'
   | 'childrenMarkdownRemark___frontmatter___month'
+  | 'childrenMarkdownRemark___frontmatter___role'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
   | 'childrenMarkdownRemark___fileAbsolutePath'
@@ -621,6 +622,7 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___occasion'
   | 'childMarkdownRemark___frontmatter___location'
   | 'childMarkdownRemark___frontmatter___month'
+  | 'childMarkdownRemark___frontmatter___role'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1723,6 +1725,7 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___occasion'
   | 'frontmatter___location'
   | 'frontmatter___month'
+  | 'frontmatter___role'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1866,6 +1869,7 @@ export type MarkdownRemarkFrontmatter = {
   occasion?: Maybe<Scalars['String']>;
   location?: Maybe<Scalars['String']>;
   month?: Maybe<Scalars['String']>;
+  role?: Maybe<Scalars['String']>;
 };
 
 
@@ -1898,6 +1902,7 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   occasion?: Maybe<StringQueryOperatorInput>;
   location?: Maybe<StringQueryOperatorInput>;
   month?: Maybe<StringQueryOperatorInput>;
+  role?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
