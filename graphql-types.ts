@@ -542,20 +542,20 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark'
   | 'childrenMarkdownRemark___id'
   | 'childrenMarkdownRemark___frontmatter___title'
-  | 'childrenMarkdownRemark___frontmatter___date'
-  | 'childrenMarkdownRemark___frontmatter___description'
-  | 'childrenMarkdownRemark___frontmatter___school'
-  | 'childrenMarkdownRemark___frontmatter___summary'
-  | 'childrenMarkdownRemark___frontmatter___year'
   | 'childrenMarkdownRemark___frontmatter___venue'
+  | 'childrenMarkdownRemark___frontmatter___year'
   | 'childrenMarkdownRemark___frontmatter___link'
-  | 'childrenMarkdownRemark___frontmatter___citation'
   | 'childrenMarkdownRemark___frontmatter___abstract'
+  | 'childrenMarkdownRemark___frontmatter___author'
   | 'childrenMarkdownRemark___frontmatter___occasion'
   | 'childrenMarkdownRemark___frontmatter___location'
   | 'childrenMarkdownRemark___frontmatter___month'
   | 'childrenMarkdownRemark___frontmatter___role'
-  | 'childrenMarkdownRemark___frontmatter___author'
+  | 'childrenMarkdownRemark___frontmatter___citation'
+  | 'childrenMarkdownRemark___frontmatter___school'
+  | 'childrenMarkdownRemark___frontmatter___summary'
+  | 'childrenMarkdownRemark___frontmatter___date'
+  | 'childrenMarkdownRemark___frontmatter___description'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
   | 'childrenMarkdownRemark___fileAbsolutePath'
@@ -611,20 +611,20 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___internal___type'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
-  | 'childMarkdownRemark___frontmatter___date'
-  | 'childMarkdownRemark___frontmatter___description'
-  | 'childMarkdownRemark___frontmatter___school'
-  | 'childMarkdownRemark___frontmatter___summary'
-  | 'childMarkdownRemark___frontmatter___year'
   | 'childMarkdownRemark___frontmatter___venue'
+  | 'childMarkdownRemark___frontmatter___year'
   | 'childMarkdownRemark___frontmatter___link'
-  | 'childMarkdownRemark___frontmatter___citation'
   | 'childMarkdownRemark___frontmatter___abstract'
+  | 'childMarkdownRemark___frontmatter___author'
   | 'childMarkdownRemark___frontmatter___occasion'
   | 'childMarkdownRemark___frontmatter___location'
   | 'childMarkdownRemark___frontmatter___month'
   | 'childMarkdownRemark___frontmatter___role'
-  | 'childMarkdownRemark___frontmatter___author'
+  | 'childMarkdownRemark___frontmatter___citation'
+  | 'childMarkdownRemark___frontmatter___school'
+  | 'childMarkdownRemark___frontmatter___summary'
+  | 'childMarkdownRemark___frontmatter___date'
+  | 'childMarkdownRemark___frontmatter___description'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1715,20 +1715,20 @@ export type MarkdownRemarkFields = {
 export type MarkdownRemarkFieldsEnum =
   | 'id'
   | 'frontmatter___title'
-  | 'frontmatter___date'
-  | 'frontmatter___description'
-  | 'frontmatter___school'
-  | 'frontmatter___summary'
-  | 'frontmatter___year'
   | 'frontmatter___venue'
+  | 'frontmatter___year'
   | 'frontmatter___link'
-  | 'frontmatter___citation'
   | 'frontmatter___abstract'
+  | 'frontmatter___author'
   | 'frontmatter___occasion'
   | 'frontmatter___location'
   | 'frontmatter___month'
   | 'frontmatter___role'
-  | 'frontmatter___author'
+  | 'frontmatter___citation'
+  | 'frontmatter___school'
+  | 'frontmatter___summary'
+  | 'frontmatter___date'
+  | 'frontmatter___description'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1860,20 +1860,20 @@ export type MarkdownRemarkFilterListInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
-  description?: Maybe<Scalars['String']>;
-  school?: Maybe<Scalars['String']>;
-  summary?: Maybe<Scalars['String']>;
-  year?: Maybe<Scalars['String']>;
   venue?: Maybe<Scalars['String']>;
+  year?: Maybe<Scalars['String']>;
   link?: Maybe<Scalars['String']>;
-  citation?: Maybe<Scalars['String']>;
   abstract?: Maybe<Scalars['String']>;
+  author?: Maybe<Scalars['String']>;
   occasion?: Maybe<Scalars['String']>;
   location?: Maybe<Scalars['String']>;
   month?: Maybe<Scalars['String']>;
   role?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
+  citation?: Maybe<Scalars['String']>;
+  school?: Maybe<Scalars['String']>;
+  summary?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['Date']>;
+  description?: Maybe<Scalars['String']>;
 };
 
 
@@ -1886,20 +1886,20 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
-  date?: Maybe<DateQueryOperatorInput>;
-  description?: Maybe<StringQueryOperatorInput>;
-  school?: Maybe<StringQueryOperatorInput>;
-  summary?: Maybe<StringQueryOperatorInput>;
-  year?: Maybe<StringQueryOperatorInput>;
   venue?: Maybe<StringQueryOperatorInput>;
+  year?: Maybe<StringQueryOperatorInput>;
   link?: Maybe<StringQueryOperatorInput>;
-  citation?: Maybe<StringQueryOperatorInput>;
   abstract?: Maybe<StringQueryOperatorInput>;
+  author?: Maybe<StringQueryOperatorInput>;
   occasion?: Maybe<StringQueryOperatorInput>;
   location?: Maybe<StringQueryOperatorInput>;
   month?: Maybe<StringQueryOperatorInput>;
   role?: Maybe<StringQueryOperatorInput>;
-  author?: Maybe<StringQueryOperatorInput>;
+  citation?: Maybe<StringQueryOperatorInput>;
+  school?: Maybe<StringQueryOperatorInput>;
+  summary?: Maybe<StringQueryOperatorInput>;
+  date?: Maybe<DateQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2111,8 +2111,6 @@ export type QuerySiteArgs = {
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
-  polyfill?: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -2252,8 +2250,6 @@ export type Site = Node & {
   port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
   flags?: Maybe<SiteFlags>;
-  polyfill?: Maybe<Scalars['Boolean']>;
-  pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
@@ -2462,8 +2458,6 @@ export type SiteFieldsEnum =
   | 'flags___FAST_REFRESH'
   | 'flags___FAST_DEV'
   | 'flags___DEV_SSR'
-  | 'polyfill'
-  | 'pathPrefix'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2557,8 +2551,6 @@ export type SiteFilterInput = {
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
   flags?: Maybe<SiteFlagsFilterInput>;
-  polyfill?: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;

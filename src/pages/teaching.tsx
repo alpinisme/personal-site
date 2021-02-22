@@ -33,13 +33,12 @@ interface Course {
 }
 
 function TeachingIndex({ data, location }: TeachingIndexProps): ReactElement {
-    const siteTitle = data.site?.siteMetadata?.title as string;
     const posts = data.allMarkdownRemark.edges;
 
     return (
         <Layout
             location={location}
-            title={siteTitle}
+            title={'Home'}
             width="w-11/12 md:w-10/12 lg:w-8/12 xl:w-7/12"
         >
             <SEO title="Teaching Experience" />
