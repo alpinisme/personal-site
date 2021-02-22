@@ -17,6 +17,7 @@ function Layout({
 }: Props): ReactElement {
     const isInBlog = location.pathname.startsWith('/blog');
     const homePath = isInBlog ? '/blog' : '/';
+    console.log(location.pathname);
 
     const header =
         location.pathname === '/blog' ? (

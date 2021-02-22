@@ -63,20 +63,17 @@ function BlogPostTemplate({
     pageContext,
 }: Props): ReactElement {
     const post = data.markdownRemark;
-    const siteTitle = data.site?.siteMetadata?.title as string;
+    const blogName = data?.site?.siteMetadata?.blogName || '';
     const { previous, next } = pageContext;
     const html = convertNoteFormatting(post?.html || '');
     const description =
         post?.frontmatter?.description ||
         post?.excerpt ||
-        `A blog post at ${siteTitle}`;
+        `A blog post at ${blogName}`;
 
     return (
-        <Layout location={location} title={siteTitle}>
-            <SEO
-                title={post?.frontmatter?.title as string}
-                description={description}
-            />
+        <Layout location={location} title={blogName}>
+            <SEO title={blogName} description={description} />
 
             <h1 className="text-cerise-700 text-3xl font-black mt-8 mb-2 text-center">
                 {post?.frontmatter?.title}
@@ -127,7 +124,7 @@ export const pageQuery = graphql`
     query BlogPostBySlug($slug: String!) {
         site {
             siteMetadata {
-                title
+                blogName
                 author
             }
         }

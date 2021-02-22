@@ -31,7 +31,7 @@ function BlogIndex({ data, location }: Props): ReactElement {
                         >
                             <h2 className="mt-10 text-2xl text-cerise-700 leading-tight">
                                 <Link
-                                    to={node.fields?.slug as string}
+                                    to={'/blog' + node.fields?.slug}
                                     className="no-underline"
                                 >
                                     {title}
