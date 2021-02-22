@@ -14,7 +14,10 @@ export default function LandingPage(props: Props): ReactElement {
                 <Img
                     fluid={props.data.shoreline.childImageSharp.fluid}
                     alt="An image of me on some rocks at the beach"
-                    style={{ 'clip-path': 'ellipse(98% 58% at 48% 42%)' }}
+                    style={{
+                        'clip-path': 'ellipse(98% 58% at 48% 42%)',
+                        transform: 'scaleX(-1)',
+                    }}
                 />
             </div>
             <div className="p-6 flex-auto lg:flex lg:justify-around">
