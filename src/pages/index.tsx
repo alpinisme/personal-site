@@ -20,7 +20,7 @@ export default function LandingPage(props: Props): ReactElement {
                     }}
                 />
             </div>
-            <div className="p-6 flex-auto lg:flex lg:justify-around">
+            <div className="p-6 flex-auto lg:flex lg:justify-around lg:px-12">
                 <div className="text-center self-center lg:mr-24">
                     <SEO title="Home" />
                     <h1 className="text-5xl text-ocean-100 mt-10 mb-10 lg:mt-0">
@@ -34,18 +34,15 @@ export default function LandingPage(props: Props): ReactElement {
                         />
                     </div>
                 </div>
-                <div className="self-center">
+                <div className="self-center lg:pr-12">
                     <h2 className="text-3xl text-cerise-500">
                         I’m a <Link to="/teaching">teacher</Link>,{' '}
                         <Link to="/research">scholar</Link>, and{' '}
                         <Link to="/dev">developer</Link>.{' '}
                     </h2>
                     <p className="text-ocean-100 mb-4 mt-6">
-                        I’m also an experienced{' '}
-                        <Link to="editing" className="text-cerise-400">
-                            editor
-                        </Link>{' '}
-                        and occasional translator.
+                        I’m also an experienced editor and occasional
+                        translator.
                     </p>
                     <p className="text-ocean-100 my-4">
                         <Link to="/contact" className="text-cerise-400">

@@ -45,13 +45,10 @@ function Layout({
                 <main>{children}</main>
             </div>
 
-            <footer className="text-sm text-ocean-300 my-2 self-center">
-                © {new Date().getFullYear()} M
-                <Link to={'/teaching/'} className="hidden">
-                    Teaching
-                </Link>
-                <Link to={'/contact/'} className="hidden">
-                    Teaching
+            <footer className="text-sm text-ocean-200 mt-2 mb-8 self-center">
+                © {new Date().getFullYear()} Matthew Nelson
+                <Link to="/" className="ml-14">
+                    Back to Homepage
                 </Link>
             </footer>
         </div>
