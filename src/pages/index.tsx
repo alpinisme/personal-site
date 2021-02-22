@@ -9,7 +9,11 @@ export default function LandingPage(props: Props): ReactElement {
 
     return (
         <div className="font-sans bg-ocean-800 min-h-screen lg:h-screen lg:overflow-hidden flex flex-col">
-            <SEO title="Home" />
+            <SEO
+                title="Home"
+                description="The personal website and blog of Matthew Nelson, a literary scholar, teacher, and full-stack web developer"
+                lang="en-us"
+            />
             <div className="w-screen">
                 <Img
                     fluid={props.data.shoreline.childImageSharp.fluid}
