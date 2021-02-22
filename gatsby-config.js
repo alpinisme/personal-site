@@ -3,7 +3,9 @@ module.exports = {
         title: `Matt Nelson`,
         blogName: `Secluded Soapbox`,
         author: `Matt Nelson`,
-        description: `A place for notes, quotes, and cavils of questionable value.`,
+        description:
+            'The personal website and blog of Matthew Nelson, a literary scholar, teacher, and full-stack web developer',
+        blogDescription: `A place for notes, quotes, and cavils of questionable value.`,
         siteUrl: `https://nelson-m.com/`,
     },
     flags: {

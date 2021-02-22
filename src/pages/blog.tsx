@@ -12,14 +12,14 @@ interface Props {
 
 function BlogIndex({ data, location }: Props): ReactElement {
     const blogName = data.site?.siteMetadata?.blogName as string;
-    const siteDescription = data.site?.siteMetadata?.description;
+    const blogDescription = data.site?.siteMetadata?.blogDescription;
     const posts = data.allMarkdownRemark.edges;
 
     return (
         <Layout location={location} title={blogName}>
             <SEO title="All posts" />
             <div className="text-center italic mb-16 w-64 mx-auto text-base">
-                {siteDescription}
+                {blogDescription}
             </div>
             <>
                 {posts.map(({ node }) => {
@@ -63,7 +63,7 @@ export const pageQuery = graphql`
         site {
             siteMetadata {
                 blogName
-                description
+                blogDescription
             }
         }
         allMarkdownRemark(
