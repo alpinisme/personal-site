@@ -550,11 +550,11 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___venue'
   | 'childrenMarkdownRemark___frontmatter___link'
   | 'childrenMarkdownRemark___frontmatter___abstract'
-  | 'childrenMarkdownRemark___frontmatter___citation'
   | 'childrenMarkdownRemark___frontmatter___occasion'
   | 'childrenMarkdownRemark___frontmatter___location'
   | 'childrenMarkdownRemark___frontmatter___month'
   | 'childrenMarkdownRemark___frontmatter___role'
+  | 'childrenMarkdownRemark___frontmatter___citation'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
   | 'childrenMarkdownRemark___fileAbsolutePath'
@@ -618,11 +618,11 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___venue'
   | 'childMarkdownRemark___frontmatter___link'
   | 'childMarkdownRemark___frontmatter___abstract'
-  | 'childMarkdownRemark___frontmatter___citation'
   | 'childMarkdownRemark___frontmatter___occasion'
   | 'childMarkdownRemark___frontmatter___location'
   | 'childMarkdownRemark___frontmatter___month'
   | 'childMarkdownRemark___frontmatter___role'
+  | 'childMarkdownRemark___frontmatter___citation'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1721,11 +1721,11 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___venue'
   | 'frontmatter___link'
   | 'frontmatter___abstract'
-  | 'frontmatter___citation'
   | 'frontmatter___occasion'
   | 'frontmatter___location'
   | 'frontmatter___month'
   | 'frontmatter___role'
+  | 'frontmatter___citation'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1865,11 +1865,11 @@ export type MarkdownRemarkFrontmatter = {
   venue?: Maybe<Scalars['String']>;
   link?: Maybe<Scalars['String']>;
   abstract?: Maybe<Scalars['String']>;
-  citation?: Maybe<Scalars['String']>;
   occasion?: Maybe<Scalars['String']>;
   location?: Maybe<Scalars['String']>;
   month?: Maybe<Scalars['String']>;
   role?: Maybe<Scalars['String']>;
+  citation?: Maybe<Scalars['String']>;
 };
 
 
@@ -1898,11 +1898,11 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   venue?: Maybe<StringQueryOperatorInput>;
   link?: Maybe<StringQueryOperatorInput>;
   abstract?: Maybe<StringQueryOperatorInput>;
-  citation?: Maybe<StringQueryOperatorInput>;
   occasion?: Maybe<StringQueryOperatorInput>;
   location?: Maybe<StringQueryOperatorInput>;
   month?: Maybe<StringQueryOperatorInput>;
   role?: Maybe<StringQueryOperatorInput>;
+  citation?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -3448,7 +3448,7 @@ export type ResearchPageQueryVariables = Exact<{ [key: string]: never; }>;
 export type ResearchPageQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'author'>> }>, publications: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'html'>
         & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'year' | 'venue' | 'title' | 'abstract' | 'link'>> }
-      ) }> }, presentations: { edges: Array<{ node: { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'year' | 'month' | 'occasion' | 'title' | 'location'>> } }> } };
+      ) }> }, presentations: { edges: Array<{ node: { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'year' | 'month' | 'occasion' | 'title' | 'location' | 'role'>> } }> } };
 
 export type TeachingIndexQueryVariables = Exact<{ [key: string]: never; }>;
 

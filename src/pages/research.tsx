@@ -42,6 +42,7 @@ interface Presentation {
         month: string;
         year: string;
         occasion: string;
+        role?: string;
     };
 }
 
@@ -77,6 +78,7 @@ export default function Research({
                     key={pres.frontmatter.title}
                     className="my-6 pl-12 -indent-4"
                 >
+                    {pres.frontmatter.role && pres.frontmatter.role + ', '}
                     &ldquo;{pres.frontmatter.title}.&rdquo;{' '}
                     <span className="italic">{pres.frontmatter.occasion},</span>{' '}
                     {pres.frontmatter.location}, {pres.frontmatter.month}{' '}
@@ -150,6 +152,7 @@ export const pageQuery = graphql`
                         occasion
                         title
                         location
+                        role
                     }
                 }
             }
