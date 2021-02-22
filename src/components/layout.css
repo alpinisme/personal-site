@@ -156,6 +156,10 @@ label.note-toggle:not(.note-marker) {
     }
 }
 
+.citation {
+    @apply -indent-2 pl-4  lg:pl-12 lg:-indent-4;
+}
+
 @tailwind utilities;
 
 /* blog post styling -- for markdown posts */

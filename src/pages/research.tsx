@@ -71,7 +71,7 @@ export default function Research({
         <>
             {publications.map((pub) => (
                 <div key={pub.frontmatter.title} className="my-6">
-                    <div className="pl-12 -indent-4">
+                    <div className="citation">
                         <a href={pub.frontmatter.link}>
                             {pub.frontmatter.title}
                         </a>
@@ -88,10 +88,7 @@ export default function Research({
     const presentationList = (
         <>
             {presentations.map((pres) => (
-                <div
-                    key={pres.frontmatter.title}
-                    className="my-6 pl-12 -indent-4"
-                >
+                <div key={pres.frontmatter.title} className="my-6 citation">
                     {pres.frontmatter.role && pres.frontmatter.role + ', '}
                     &ldquo;{pres.frontmatter.title}.&rdquo;{' '}
                     <span className="italic">{pres.frontmatter.occasion},</span>{' '}
@@ -105,10 +102,7 @@ export default function Research({
     const translationList = (
         <>
             {translations.map((trans) => (
-                <div
-                    key={trans.frontmatter.title}
-                    className="my-6 pl-12 -indent-4"
-                >
+                <div key={trans.frontmatter.title} className="my-6 citation">
                     {trans.frontmatter.link ? (
                         <a href={trans.frontmatter.link}>
                             pres.frontmatter.author
