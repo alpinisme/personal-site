@@ -97,7 +97,11 @@ export default function Contact({ location }: Props): ReactElement {
     );
 
     return (
-        <Layout location={location} title={'Home'}>
+        <Layout
+            location={location}
+            title={'Home'}
+            width="w-11/12 md:w-10/12 lg:w-9/12 xl:w-7/12 2xl:w-1/2"
+        >
             <SEO title="Contact" />
 
             {submissionStatus == 'success' ? (

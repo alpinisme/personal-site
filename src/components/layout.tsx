@@ -17,7 +17,7 @@ function Layout({
 }: Props): ReactElement {
     const isInBlog = location.pathname.startsWith('/blog');
     const homePath = isInBlog ? '/blog' : '/';
-    console.log(location.pathname);
+    const padding = isInBlog ? 'lg:pr-64' : '';
 
     const header =
         location.pathname === '/blog' ? (
@@ -38,7 +38,7 @@ function Layout({
         );
 
     return (
-        <div className="flex flex-col leading-normal lg:pr-64">
+        <div className={`flex flex-col leading-normal ${padding}`}>
             <div
                 className={`mx-auto p-5 md:p-8 my-6 bg-gray-100 min-h-screen text-ocean-800 shadow-lg flex-auto ${width}`}
             >

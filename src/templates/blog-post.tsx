@@ -95,7 +95,7 @@ function BlogPostTemplate({
                     {previous && (
                         <Link
                             className="text-cerise-700 text-lg ml-2"
-                            to={previous.fields.slug}
+                            to={'/blog' + previous.fields.slug}
                             rel="prev"
                         >
                             ← {previous.frontmatter.title}
@@ -106,7 +106,7 @@ function BlogPostTemplate({
                     {next && (
                         <Link
                             className="text-cerise-700 text-lg mr-2"
-                            to={next.fields.slug}
+                            to={'/blog' + next.fields.slug}
                             rel="next"
                         >
                             {next.frontmatter.title} →

@@ -123,7 +123,7 @@ export default function Research({
         <Layout
             location={location}
             title="Home"
-            width="w-11/12 md:w-10/12 lg:w-8/12 xl:w-7/12"
+            width="w-11/12 md:w-10/12 lg:w-9/12 xl:w-7/12 2xl:w-1/2"
         >
             <SEO title="Research Experience" />
             <h1 className="text-center text-3xl lg:text-4xl my-10">Research</h1>
