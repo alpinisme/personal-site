@@ -50,6 +50,7 @@ export default function DevPage(props: Props): ReactElement {
             <ul className="list-disc ml-5 grid grid-cols-2 lg:w-2/3 mx-auto my-3">
                 <li>React</li>
                 <li>Laravel</li>
+                <li>Livewire + Alpine.js</li>
                 <li>IHP (learning)</li>
             </ul>
 
