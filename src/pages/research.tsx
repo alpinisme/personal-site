@@ -143,10 +143,45 @@ export default function Research({
             </h2>
             {presentationList}
 
-            <h2 className="mt-8 text-center text-xl font-semibold text-ocean-600">
+            <h2 className="mt-8 mb-6 text-center text-xl font-semibold text-ocean-600">
                 Projects and Collaborations
             </h2>
-            <p className="text-center">Coming soon</p>
+            <h3>Global Cinema in Context, 2018 - Present</h3>
+            <p className="mt-4 mb-6">
+                Global Cinema in Context is an interdisciplinary project at the
+                University of Illinois to develop digital tools for the study of
+                global cinema. I've been contributing to the project since 2018,
+                contributing expert knowledge on Indian cinema, building web
+                apps for data entry and display, and helping guide the project.
+            </p>
+            <h3>Gandhari Dictionary Project, 2009 - 2010</h3>
+            <p className="mt-4 mb-6">
+                As an undergraduate, I contributed to the Gandhari Dictionary
+                project, led by Stefan Baums. I helped digitize images and
+                cross-reference Gandhari words with Sanskrit sources.
+            </p>
+
+            <h2 className="mt-8 text-center text-xl font-semibold text-ocean-600">
+                Education
+            </h2>
+            <p className="my-6 citation">
+                <span className="text-cerise-800">PhD</span> in Comparative
+                Literature, May 2018, University of Illinois at
+                Urbana-Champaign. Dissertation: Translingual Nostalgias in
+                Modern Sanskrit and Indian Poetry in English. Co-Directors: Waïl
+                Hassan and Rajeshwari Pandharipande. Committee Members: Rini
+                Mehta and Michael Rothberg (UCLA).
+            </p>
+            <p className="my-6 citation">
+                <span className="text-cerise-800">MA</span> in Comparative
+                Literature (with Distinction), 2012, University of Illinois at
+                Urbana-Champaign.
+            </p>
+            <p className="my-6 citation">
+                <span className="text-cerise-800">BA</span> in English
+                Literature and South Asian Languages & Literatures (Double
+                Degree, Magna Cum Laude), 2009, University of Washington.
+            </p>
         </Layout>
     );
 }
