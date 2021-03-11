@@ -66,7 +66,7 @@ function TeachingIndex({ data, location }: TeachingIndexProps): ReactElement {
                                 </div>
                             </dt>
                             <dd
-                                className="ml-4 w-4/5 text-lg md:leading-relaxed course-description"
+                                className="mx-4 w-11/12 md:w-4/5 text-lg md:leading-relaxed course-description"
                                 dangerouslySetInnerHTML={{
                                     __html: node.html,
                                 }}
