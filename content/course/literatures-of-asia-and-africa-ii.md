@@ -1,5 +1,5 @@
 ---
-title: Literatures of Asia &&nbsp;Africa&nbsp;II
+title: Literatures of Asia & Africa II
 school: University of Illinois at Urbana-Champaign
 summary: The second part of a two-semester survey of non-Western literary traditions.
 year: '2015'
