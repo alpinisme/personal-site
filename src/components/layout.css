@@ -156,6 +156,13 @@ label.note-toggle:not(.note-marker) {
     }
 }
 
+@screen xl {
+    .blog-post .note-toggle + .note {
+        margin-right: -70%;
+        width: 60%;
+    }
+}
+
 .citation {
     @apply -indent-2 pl-4  lg:pl-12 lg:-indent-4;
 }
@@ -290,4 +297,21 @@ label.note-toggle:not(.note-marker) {
 
 .course-description ul p {
     @apply my-0;
+}
+
+.poem p {
+    @apply my-0 -indent-2 pl-4 lg:ml-12 block;
+}
+
+.poem p .note {
+    text-indent: 0;
+}
+
+.poem h1,
+.poem h2 {
+    @apply text-center;
+}
+
+.poem h2::before {
+    content: '';
 }
