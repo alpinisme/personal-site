@@ -2,7 +2,7 @@
 title: Ordinary Language Philosophy and Literary Studies
 occasion: Annual Meeting of the American Comparative Literature Association
 location: Virtual
-year: "2021"
+year: '2021'
 month: April
-role: Seminar Co-Organizer
+role: Seminar Organizer
 ---
