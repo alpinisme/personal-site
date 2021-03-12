@@ -24,18 +24,18 @@ export default function DevPage(props: Props): ReactElement {
                 find the time soon to share a few and comment on them here.
             </div>
 
-            <h2 className="mt-8 text-center text-xl font-semibold text-ocean-600">
+            <h2 className="mt-12 text-center text-xl font-semibold text-ocean-600">
                 Tech Stack
             </h2>
 
             <h3 className="my-5">Programming Languages</h3>
-            <ul className="list-disc ml-5 grid grid-cols-2 lg:w-2/3 mx-auto my-3">
+            <ul className="list-disc ml-5 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto my-3">
                 <li>JavaScript</li>
                 <li>TypeScript</li>
                 <li>PHP</li>
                 <li>Elm</li>
                 <li>HTML</li>
-                <li>CSS</li>
+                <li>CSS & SASS</li>
                 <li>SQL</li>
                 <li>Python</li>
             </ul>
@@ -47,14 +47,15 @@ export default function DevPage(props: Props): ReactElement {
             </p>
 
             <h3 className="my-5">Frameworks and Libraries</h3>
-            <ul className="list-disc ml-5 grid grid-cols-2 lg:w-2/3 mx-auto my-3">
+            <ul className="list-disc ml-5 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto my-3">
                 <li>React</li>
                 <li>Laravel</li>
-                <li>Livewire + Alpine.js</li>
+                <li>D3.js</li>
                 <li>IHP (learning)</li>
+                <li>Livewire + Alpine.js</li>
             </ul>
 
-            <h2 className="mt-8 text-center text-xl font-semibold text-ocean-600">
+            <h2 className="mt-12 text-center text-xl font-semibold text-ocean-600">
                 Projects and Experience
             </h2>
 
