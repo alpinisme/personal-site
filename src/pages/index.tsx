@@ -99,14 +99,14 @@ export const pageQuery = graphql`
                 author
             }
         }
-        shoreline: file(relativePath: { eq: "shoreline.png" }) {
+        shoreline: file(relativePath: { eq: "shoreline.webp" }) {
             childImageSharp {
                 fluid(maxWidth: 1600) {
                     ...GatsbyImageSharpFluid
                 }
             }
         }
-        profile: file(relativePath: { eq: "profile.png" }) {
+        profile: file(relativePath: { eq: "profile.webp" }) {
             childImageSharp {
                 fluid(maxWidth: 300) {
                     ...GatsbyImageSharpFluid
