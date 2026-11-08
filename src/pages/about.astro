@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets';
+import profile from '../../content/assets/profile.webp';
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+    title="About"
+    description="Matt Nelson's path from comparative literature to leading engineering for Panorama."
+>
+    <div class="prose">
+        <h1>About</h1>
+        <Image
+            class="portrait"
+            src={profile}
+            width={320}
+            alt="Me smiling in front of a bookcase."
+        />
+        <p class="lede">
+            I'm a software engineering manager in Providence, Rhode Island.
+        </p>
+        <p>
+            I lead the team behind <a href="https://panorama.ag">Panorama</a>,
+            Precision Planting's cloud platform for farm data. Growers and
+            dealers use it to see what their equipment is doing, plan what that
+            equipment does next, and ask Aurora, its AI agent, questions about
+            their operations. My team of about ten works across web, mobile,
+            cloud, and C++ data services. I also help set the product's
+            direction, so I spend a lot of my time with the people who use it.
+        </p>
+        <p>
+            I joined Precision Planting in 2021 and became the platform's first
+            web developer in 2022, then its technical lead through its launches
+            in 2023 and 2024. I've led the team since late 2024, and I still
+            build core systems myself.
+        </p>
+        <h2>A winding road to software</h2>
+        <p>
+            I came to engineering from the humanities. I earned a PhD in
+            comparative literature at the University of Illinois at
+            Urbana-Champaign, and I{' '}
+            <a href="/research">
+                wrote about modern Sanskrit and postcolonial poetry
+            </a>{' '}
+            and <a href="/teaching">taught literature, writing, and Sanskrit</a>
+            . A film-studies research project moved me toward software. I built
+            the database and web app that replaced its spreadsheets, and then I
+            kept going.
+        </p>
+        <p>
+            I had no background in agriculture when I started, and growers have
+            taught me most of what I now know about it.
+        </p>
+        <h2>Talks and interviews</h2>
+        <ul>
+            <li>
+                <a href="https://youtu.be/boRfHaKV4gM">
+                    Precision Planting Winter Conference 2025
+                </a>
+            </li>
+            <li>
+                <a href="https://open.spotify.com/episode/4hedpDFFDnd6uf5wqTyGtg">
+                    "Building Confidence in Aurora"
+                </a>
+                , on the podcast <em>Smarter Every Season</em>
+            </li>
+            <li>
+                <a href="https://www.producer.com/crops/panorama-from-precision-planting-offers-mobile-access-to-data/">
+                    Interview in <em>The Western Producer</em>
+                </a>
+                , 2025
+            </li>
+        </ul>
+    </div>
+</Base>
+
+<style>
+    .portrait {
+        width: 9rem;
+        margin: 0 0 1.25rem;
+    }
+    @media (min-width: 36rem) {
+        .portrait {
+            float: right;
+            width: 11rem;
+            margin: 0.35rem 0 1rem 2rem;
+        }
+    }
+</style>

@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+    const posts = await getCollection('work');
+    return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} description={post.data.summary}>
+    <article class="post">
+        <h1>{post.data.title}</h1>
+        <p class="lede">{post.data.summary}</p>
+        <Content />
+    </article>
+</Base>
+
+<style>
+    .post > :global(*:not(figure)) {
+        max-width: var(--measure);
+    }
+</style>

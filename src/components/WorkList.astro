@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('work')).toSorted(
+    (a, b) => a.data.order - b.data.order,
+);
+---
+
+{posts.map((post) => (
+    <article class="entry">
+        <h3>
+            <a href={`/work/${post.id}`}>{post.data.title}</a>
+        </h3>
+        <p class="meta">{post.data.summary}</p>
+    </article>
+))}

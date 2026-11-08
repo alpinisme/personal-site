@@ -9,7 +9,7 @@ As I was sorting through old files the other day, I came across some translation
 
 The poems are from a work of modern Sanskrit that was published in the 1980s by Radhavallabh Tripathi. They were featured as the first and last "waves" in his book, *The Ten Waves* (लहरीदशकम्). The notes are also from when I completed the translation, somewhere around 2014. 
 
-<div class="poem mt-6">
+<div class="poem">
 
 ## Spring
 
@@ -117,7 +117,7 @@ Caught here in the net it flops around, twitching,
 
 the vernal fish squeezed by the binding,
 
-hanging here like Trishanku [>1]<span class="note">According to Hindu mythology, Trishanku was a king who asked a powerful sage to use his powers to get him into heaven. But the king of the gods, Indra, did not like the idea of a mortal in heaven, so he sent him back down to earth. Since both Indra and the sage were equally powerful and too proud to relent, Trishanku ended up suspended between earth and heaven.</span>
+hanging here like Trishanku[^1]
 
 in the space between the breath in and the breath out.
 
@@ -127,7 +127,7 @@ Where vernal glory burns
 
 on an earth ablaze with battle’s acrid flame,
 
-shadows of flesh-eating demons roam,[>2]<span class="note">A direct quote from Kalidasa’s 3rd century play, Shakuntala ( अभिज्ञानशाकुनतलम ).</span>
+shadows of flesh-eating demons roam,[^2]
 
 spilling oil over the sea.
 
@@ -139,7 +139,7 @@ Flower-bunches bloom as if pried by needles.
 
 Wanting to release his swift, half-drawn arrow,
 
-Love checks himself in doubt.[>3]<span class="note">This verse also quotes a passage from Shakuntala, in which the King’s grief over his mistakes manifests itself as a delay of the onset of spring.</span>
+Love checks himself in doubt.[^3]
 
 <br>
 
@@ -199,7 +199,7 @@ churns; poison and nectar rise to the surface.
 
 Spring swallows both.
 
-It may be clothed in yellow, but its throat turns blue.\[>4]<span class="note">In Puranic mythology, the gods churn the primeval ocean in order to separate from it the nectar of immortality. In doing so, a great poison was released from its death. Shiva swallowed this poison, which turned his throat blue, earning him the epithet “the blue-throated.” Krishna, on the other hand, an avatar of Vishnu is known by the epithet, “the yellow-clothed.” Thus this verse punningly suggests the contradiction that spring could be both Vishnu and Shiva.</span>
+It may be clothed in yellow, but its throat turns blue.[^4]
 
 <br>
 
@@ -299,7 +299,7 @@ left the family that her lover left.
 
 There are no more carnations there,
 
-Spring, too, has left in dejection.\[>5]<span class="note">Radha is Krishna’s most famous lover. She lived on the banks of the Yamuna river with a clan of cowherds. The young girls of this clan (known as *gopis*) were all lovers to Krishna. They (and Radha in particular) are treated in Hinduism as symbols of a perfect relationship with god.</span>
+Spring, too, has left in dejection.[^5]
 
 <br>
 
@@ -319,7 +319,7 @@ and meanings in which lie beauty’s essence.
 
 The playful Spring goes unseen
 
-even by those bespectacled men in white.\[>6]<span class="note">The men might be wearing white because white is the traditional color of mourning in South Asia, the implication being that Spring has died.</span>
+even by those bespectacled men in white.[^6]
 
 <br>
 
@@ -359,7 +359,7 @@ among groups of gleeful girls,
 
 and on every side the city is filled
 
-with the loud reds and yellows of Holi,\[>7]<span class="note">Holi is a spring festival.</span>
+with the loud reds and yellows of Holi,[^7]
 
 <br>
 
@@ -447,7 +447,7 @@ Spring clings as lines of dried sweat
 
 on the sweet cheeks of men
 
-ploughing the durva-rich\[>8]<span class="note">Durva grass is a common plant used for medicinal and ritual purposes throughout India.</span>[](applewebdata://9AF72517-42C8-4E29-AE67-CECF3AD46297#_ftn9) earth
+ploughing the durva-rich[^8][](applewebdata://9AF72517-42C8-4E29-AE67-CECF3AD46297#_ftn9) earth
 
 with ploughs of their own power.
 
@@ -465,7 +465,7 @@ The power to cleave it escapes even the gods.
 
 ## Even Now
 
-Even now,[>9]<span class="note">The refrain of this wave (“even now”) echoes a classic work of Sanskrit poetry, Bilhana’s “Fifty Stanzas of a Thief,” which consists of fifty stanzas of a man on death row, remembering his princess-lover fondly. “Even now” his mind focuses on her, despite his oncoming death. She is also the reason for his being executed.</span> they disturb the mind:
+Even now,[^9] they disturb the mind:
 
 tasks finished and tasks undone.
 
@@ -491,7 +491,7 @@ on busy roads, I search
 
 for the famed, old path
 
-lost now amid my footprints.\[>10]<span class="note">The original contained a series of puns: “footprints” can also mean “words,” and “path” can also mean “\[literary] style.”</span>
+lost now amid my footprints.[^10]
 
 <br>
 
@@ -571,7 +571,7 @@ Sita from the Dandaka forest,
 
 but there’s no Jatayu to come to her rescue,
 
-that poor, sobbing daughter of Videha.\[>11]<span class="note">This verse and the following play on traditional Hindu stories, each of which is changed here so as to draw attention to some perversion in the poet’s “now.” For example, in the *Ramayana*, Jatayu comes to rescue the heroine Sita, after her abduction by Ravana.</span>
+that poor, sobbing daughter of Videha.[^11]
 
 <br>
 
@@ -581,7 +581,7 @@ drags Draupadi from the assembly.
 
 Even now, wretched faces watch
 
-as she, terrified, calls to Krishna.\[>12]<span class="note">There is a repeated play on the Sanskrit word कृष्ण(black) in this verse. The epithet used to name Draupadi is कृष्णा (for she is dark-skinned), Duhshasana is said to have deeds that are कृष्ण, and, of course, the God to whom Draupadi calls out is named कृष्ण (Krishna).</span>
+as she, terrified, calls to Krishna.[^12]
 
 <br>
 
@@ -601,6 +601,32 @@ roars to destroy memories
 
 as if to burn them bright and fierce,
 
-but that daughter of Kanva hears him and laughs.[>13]<span class="note">[Note added in 2021: I think this is only a partial translation, and the original poem is a fair bit longer, but I don't have it in front of me to check]</span>
+but that daughter of Kanva hears him and laughs.[^13]
 
 </div>
+
+[^1]: According to Hindu mythology, Trishanku was a king who asked a powerful sage to use his powers to get him into heaven. But the king of the gods, Indra, did not like the idea of a mortal in heaven, so he sent him back down to earth. Since both Indra and the sage were equally powerful and too proud to relent, Trishanku ended up suspended between earth and heaven.
+
+[^2]: A direct quote from Kalidasa’s 3rd century play, Shakuntala ( अभिज्ञानशाकुनतलम ).
+
+[^3]: This verse also quotes a passage from Shakuntala, in which the King’s grief over his mistakes manifests itself as a delay of the onset of spring.
+
+[^4]: In Puranic mythology, the gods churn the primeval ocean in order to separate from it the nectar of immortality. In doing so, a great poison was released from its death. Shiva swallowed this poison, which turned his throat blue, earning him the epithet “the blue-throated.” Krishna, on the other hand, an avatar of Vishnu is known by the epithet, “the yellow-clothed.” Thus this verse punningly suggests the contradiction that spring could be both Vishnu and Shiva.
+
+[^5]: Radha is Krishna’s most famous lover. She lived on the banks of the Yamuna river with a clan of cowherds. The young girls of this clan (known as *gopis*) were all lovers to Krishna. They (and Radha in particular) are treated in Hinduism as symbols of a perfect relationship with god.
+
+[^6]: The men might be wearing white because white is the traditional color of mourning in South Asia, the implication being that Spring has died.
+
+[^7]: Holi is a spring festival.
+
+[^8]: Durva grass is a common plant used for medicinal and ritual purposes throughout India.
+
+[^9]: The refrain of this wave (“even now”) echoes a classic work of Sanskrit poetry, Bilhana’s “Fifty Stanzas of a Thief,” which consists of fifty stanzas of a man on death row, remembering his princess-lover fondly. “Even now” his mind focuses on her, despite his oncoming death. She is also the reason for his being executed.
+
+[^10]: The original contained a series of puns: “footprints” can also mean “words,” and “path” can also mean “\[literary] style.”
+
+[^11]: This verse and the following play on traditional Hindu stories, each of which is changed here so as to draw attention to some perversion in the poet’s “now.” For example, in the *Ramayana*, Jatayu comes to rescue the heroine Sita, after her abduction by Ravana.
+
+[^12]: There is a repeated play on the Sanskrit word कृष्ण(black) in this verse. The epithet used to name Draupadi is कृष्णा (for she is dark-skinned), Duhshasana is said to have deeds that are कृष्ण, and, of course, the God to whom Draupadi calls out is named कृष्ण (Krishna).
+
+[^13]: [Note added in 2021: I think this is only a partial translation, and the original poem is a fair bit longer, but I don't have it in front of me to check]

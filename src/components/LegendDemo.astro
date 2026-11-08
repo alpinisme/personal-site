@@ -1,0 +1,193 @@
+---
+import {
+    FIELD_HEIGHT,
+    FIELD_WIDTH,
+    MOISTURE_MAX,
+    MOISTURE_MIN,
+    YIELD_MAX,
+    YIELD_MIN,
+} from '../scripts/synthetic-field';
+---
+
+<figure class="demo" data-legend-demo>
+    <div class="viewer">
+        <p class="readout" data-readout>
+            Point at the field to read a value.
+        </p>
+        <div class="map">
+            <canvas
+                width={FIELD_WIDTH}
+                height={FIELD_HEIGHT}
+                role="img"
+                aria-label="A map of one made-up field, colored by harvest yield. The colors change as you adjust the controls."
+            ></canvas>
+            <p class="no-webgl" data-unsupported hidden>
+                This demo needs WebGL 2, which this browser doesn't provide.
+            </p>
+        </div>
+        <div class="legend" data-legend aria-hidden="true"></div>
+        <div class="scale" aria-hidden="true">
+            <span data-scale-low></span>
+            <span>bu/ac</span>
+            <span data-scale-high></span>
+        </div>
+    </div>
+    <div class="controls" data-controls>
+        <label>
+            Lowest color <output data-out="low"></output>
+            <input
+                type="range"
+                data-input="low"
+                min={YIELD_MIN}
+                max={YIELD_MAX}
+                step="1"
+            />
+        </label>
+        <label>
+            Highest color <output data-out="high"></output>
+            <input
+                type="range"
+                data-input="high"
+                min={YIELD_MIN}
+                max={YIELD_MAX}
+                step="1"
+            />
+        </label>
+        <label>
+            Color steps <output data-out="steps"></output>
+            <input type="range" data-input="steps" min="2" max="16" step="1" />
+        </label>
+        <label>
+            Scale calibration <output data-out="calibration"></output>
+            <input
+                type="range"
+                data-input="calibration"
+                min="0.85"
+                max="1.15"
+                step="0.01"
+            />
+        </label>
+        <label>
+            Show only moisture under <output data-out="moistureLimit"></output>
+            <input
+                type="range"
+                data-input="moistureLimit"
+                min={MOISTURE_MIN}
+                max={MOISTURE_MAX}
+                step="0.5"
+            />
+        </label>
+        <button type="button" data-reset>
+            Reset
+        </button>
+    </div>
+    <figcaption>
+        I wrote this demo for this page. The field and its data are made up. And
+        the code used here is not the same as Panorama's, but it illustrates the
+        same basic techniques.
+    </figcaption>
+</figure>
+
+<style>
+    .demo {
+        margin: 2.25rem 0 3.5rem;
+        padding: 2.25rem 0 1.75rem;
+        background: var(--band);
+        /* Extends the band to the viewport edges without adding a horizontal scrollbar. */
+        box-shadow: 0 0 0 100vmax var(--band);
+        clip-path: inset(0 -100vmax);
+        display: grid;
+        gap: 1.5rem 2.5rem;
+        font-family: var(--sans);
+    }
+    @media (min-width: 52rem) {
+        .demo {
+            grid-template-columns: minmax(0, 1fr) 16rem;
+        }
+        figcaption {
+            grid-column: 1 / -1;
+        }
+    }
+    .map {
+        position: relative;
+    }
+    canvas {
+        display: block;
+        width: 100%;
+        height: auto;
+        image-rendering: pixelated;
+        touch-action: pan-y;
+    }
+    .no-webgl {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        margin: 0;
+        padding: 1rem;
+        text-align: center;
+    }
+    .readout {
+        margin: 0 0 0.75rem;
+        min-height: 1.5em;
+    }
+    .readout,
+    .scale,
+    output {
+        font-size: 0.85rem;
+        font-variant-numeric: tabular-nums;
+        color: var(--muted);
+    }
+    .legend {
+        display: flex;
+        height: 0.6rem;
+        margin-top: 0.9rem;
+    }
+    .legend :global(span) {
+        flex: 1;
+    }
+    .scale {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.35rem;
+    }
+    .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+    }
+    .controls label {
+        font-size: 0.92rem;
+        line-height: 1.35;
+        margin: 0;
+    }
+    .controls output {
+        float: right;
+    }
+    .controls input {
+        display: block;
+        width: 100%;
+        margin: 0.45rem 0 0;
+        accent-color: var(--accent);
+    }
+    .controls button {
+        align-self: flex-start;
+        padding: 0;
+        font-size: 0.92rem;
+        color: var(--accent);
+        background: none;
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+    }
+    figcaption {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: var(--muted);
+        max-width: 42rem;
+    }
+</style>
+
+<script>
+    import { mountLegendDemos } from '../scripts/legend-demo';
+    mountLegendDemos();
+</script>

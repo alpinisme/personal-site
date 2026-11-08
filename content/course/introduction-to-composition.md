@@ -3,7 +3,7 @@ title: Introduction to Composition
 school: Bradley University
 summary: A first-year introduction to college writing, with a focus on genre and
     audience.
-year: '2020'
+year: '2019–2021'
 ---
 
 This course provides students early in their college careers with an

@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="Contact" description="Get in touch with Matt Nelson.">
+    <div class="prose">
+        <h1>Contact</h1>
+        <!-- prettier-ignore -->
+        <p>You can write to me here or at <a href="mailto:m.emmett.nelson@gmail.com">m.emmett.nelson@gmail.com</a>.</p>
+        <form
+            name="contact"
+            method="POST"
+            action="/contact/thanks/"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+        >
+            <input type="hidden" name="form-name" value="contact" />
+            <label class="visually-hidden" aria-hidden="true">
+                Don't fill this out if you're human:{' '}
+                <input name="bot-field" tabindex="-1" autocomplete="off" />
+            </label>
+            <label>
+                Your name{' '}
+                <input type="text" name="name" required autocomplete="name" />
+            </label>
+            <label>
+                Your email{' '}
+                <input
+                    type="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                />
+            </label>
+            <label>
+                Message <textarea name="message" required></textarea>
+            </label>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</Base>

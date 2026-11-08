@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { newestFirst } from '../lib/sort';
+
+const publications = newestFirst(await getCollection('publication'));
+const translations = newestFirst(await getCollection('translation'));
+const presentations = newestFirst(await getCollection('presentation'));
+---
+
+<Base
+    title="Research"
+    description="Matt Nelson's publications, translations, and talks on modern Sanskrit and postcolonial literature."
+>
+    <h1>Research</h1>
+    <p class="lede">
+        Before I moved into software, I studied modern Sanskrit and postcolonial
+        poetry.
+    </p>
+
+    <h2>Publications</h2>
+    {publications.map(({ data }) => (
+        <article class="entry">
+            <h3>
+                {data.link ? <a href={data.link}>{data.title}</a> : data.title}
+            </h3>
+            <p class="meta">
+                <em>{data.venue}</em>, {data.year}
+            </p>
+            {data.abstract && <p class="detail">{data.abstract}</p>}
+        </article>
+    ))}
+
+    <h2>Translations</h2>
+    {translations.map(({ data }) => (
+        <article class="entry">
+            <h3>
+                {data.link ? <a href={data.link}>{data.title}</a> : data.title}
+            </h3>
+            <p class="meta">
+                <em>{data.venue}</em>, {data.year}
+            </p>
+        </article>
+    ))}
+
+    <h2>Talks</h2>
+    {presentations.map(({ data }) => (
+        <article class="entry">
+            <h3>{data.title}</h3>
+            <p class="meta">
+                {data.role && `${data.role}, `}
+                {data.occasion}, {data.location},{' '}
+                {data.month && `${data.month} `}
+                {data.year}
+            </p>
+        </article>
+    ))}
+</Base>

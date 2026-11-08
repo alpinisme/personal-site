@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import shoreline from '../../content/assets/shoreline.webp';
+import LegendDemo from '../components/LegendDemo.astro';
+import WorkList from '../components/WorkList.astro';
+import Base from '../layouts/Base.astro';
+
+const description =
+    'Matt Nelson leads engineering for Panorama, a cloud platform for farm data, and still writes code most days.';
+---
+
+<Base description={description}>
+    <h1>I build software that growers use in the field.</h1>
+    <div class="prose">
+        <p class="lede">
+            I lead engineering for <a href="https://panorama.ag">Panorama</a>,
+            Precision Planting's cloud platform for farm data. I was its first
+            web developer, and I still write code most days.
+        </p>
+    </div>
+
+    <h2>Try it</h2>
+    <p class="prose">
+        This is a simple demo of how Panorama's field maps handle legend
+        editing. Drag a slider and watch the whole field recolor.{' '}
+        <a href="/work/legend">Read how it works.</a>
+    </p>
+    <LegendDemo />
+
+    <h2>Work</h2>
+    <WorkList />
+
+    <h2>Before software</h2>
+    <div class="prose">
+        <p>
+            I earned a PhD in comparative literature, taught at three
+            universities, and published research on modern Sanskrit and
+            postcolonial poetry.{' '}
+            <a href="/about">Read how I got from there to here.</a>
+        </p>
+    </div>
+    <Image
+        class="shoreline"
+        src={shoreline}
+        width={1600}
+        alt="Me standing on a large rock on a beach, in black and white, with the ocean beyond."
+    />
+</Base>
+
+<style>
+    .shoreline {
+        width: 100%;
+        margin-top: 2rem;
+    }
+</style>
