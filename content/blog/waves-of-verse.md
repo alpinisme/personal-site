@@ -447,7 +447,7 @@ Spring clings as lines of dried sweat
 
 on the sweet cheeks of men
 
-ploughing the durva-rich[^8][](applewebdata://9AF72517-42C8-4E29-AE67-CECF3AD46297#_ftn9) earth
+ploughing the durva-rich[^8] earth
 
 with ploughs of their own power.
 
