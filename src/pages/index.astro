@@ -42,7 +42,8 @@ const description =
     <Image
         class="shoreline"
         src={shoreline}
-        width={1600}
+        widths={[480, 800, 960, 1440, 1920]}
+        sizes="(max-width: 62rem) calc(100vw - 2rem), 60rem"
         alt="Me standing on a large rock on a beach, in black and white, with the ocean beyond."
     />
 </Base>

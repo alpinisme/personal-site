@@ -1,5 +1,4 @@
 import {
-    buildField,
     FIELD_HEIGHT,
     FIELD_WIDTH,
     MOISTURE_MAX,
@@ -155,6 +154,20 @@ function createRenderer(gl: WebGL2RenderingContext, cells: Uint8Array) {
     return { setUp, draw };
 }
 
+function loadField() {
+    return new Promise<Uint8Array>((resolve, reject) => {
+        const worker = new Worker(
+            new URL('./field-worker.ts', import.meta.url),
+            { type: 'module' },
+        );
+        worker.onmessage = (event: MessageEvent<Uint8Array>) => {
+            worker.terminate();
+            resolve(event.data);
+        };
+        worker.onerror = reject;
+    });
+}
+
 function rampCss(position: number) {
     const scaled = position * (RAMP.length - 1);
     const index = Math.min(Math.floor(scaled), LAST_RAMP_SEGMENT);
@@ -187,12 +200,8 @@ function mount(root: HTMLElement) {
         return;
     }
 
-    const cells = buildField();
-    const renderer = createRenderer(gl, cells);
-    if (!renderer.setUp()) {
-        showUnsupported();
-        return;
-    }
+    let cells: Uint8Array | null = null;
+    let renderer: ReturnType<typeof createRenderer> | null = null;
 
     const settings = { ...DEFAULTS };
     const inputs = Object.fromEntries(
@@ -205,18 +214,18 @@ function mount(root: HTMLElement) {
     let drawQueued = false;
 
     const updateReadout = () => {
-        const cell = hovered && readCell(cells, hovered.x, hovered.y);
+        const cell = hovered && cells && readCell(cells, hovered.x, hovered.y);
         readout.textContent = cell
             ? `${(cell.yieldValue * settings.calibration).toFixed(0)} bu/ac · ${cell.moisture.toFixed(1)}% moisture`
             : READOUT_PROMPT;
     };
 
     const queueDraw = () => {
-        if (drawQueued) return;
+        if (drawQueued || !renderer) return;
         drawQueued = true;
         requestAnimationFrame(() => {
             drawQueued = false;
-            renderer.draw(settings);
+            renderer?.draw(settings);
         });
     };
 
@@ -279,11 +288,18 @@ function mount(root: HTMLElement) {
         event.preventDefault(),
     );
     canvas.addEventListener('webglcontextrestored', () => {
-        if (renderer.setUp()) queueDraw();
+        if (renderer?.setUp()) queueDraw();
         else showUnsupported();
     });
 
     render();
+
+    loadField().then((field) => {
+        cells = field;
+        renderer = createRenderer(gl, field);
+        if (renderer.setUp()) queueDraw();
+        else showUnsupported();
+    }, showUnsupported);
 }
 
 export function mountLegendDemos() {
