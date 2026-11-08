@@ -1,0 +1,21 @@
+[build]
+command = "npm run build"
+publish = "dist"
+
+[build.environment]
+NODE_VERSION = "24"
+
+[[redirects]]
+from = "/dev"
+to = "/about"
+status = 301
+
+[[redirects]]
+from = "/admin/*"
+to = "/"
+status = 301
+
+[[headers]]
+for = "/sw.js"
+[headers.values]
+Cache-Control = "no-cache"

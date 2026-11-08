@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+
+interface Props {
+    title?: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+const fullTitle = title ? `${title} · Matt Nelson` : 'Matt Nelson';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const path = Astro.url.pathname.replace(/\/$/, '');
+const shareImage = new URL('/og.png', Astro.site);
+
+const links = [
+    { href: '/work', label: 'Work' },
+    { href: '/about', label: 'About' },
+    { href: '/blog', label: 'Writing' },
+    { href: '/contact', label: 'Contact' },
+];
+---
+
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{fullTitle}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        <link rel="icon" href="/favicon.ico" />
+        <link
+            rel="preload"
+            href="/fonts/charter/charter_regular.woff"
+            as="font"
+            type="font/woff"
+            crossorigin
+        />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={shareImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:image:alt"
+            content="Matt Nelson, engineering lead for Panorama, beside a map of a field colored by yield."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="site-name" href="/">
+                Matt Nelson
+            </a>
+            <nav class="site-nav" aria-label="Main">
+                {links.map(({ href, label }) => (
+                    <a
+                        href={href}
+                        aria-current={
+                            path.startsWith(href) ? 'page' : undefined
+                        }
+                    >
+                        {label}
+                    </a>
+                ))}
+            </nav>
+        </header>
+        <main>
+            <slot />
+        </main>
+        <footer class="site-footer">
+            <span>© {new Date().getFullYear()} Matthew Nelson</span>
+            <span>
+                <a href="https://www.linkedin.com/in/m-e-nelson">LinkedIn</a>
+            </span>
+        </footer>
+    </body>
+</html>

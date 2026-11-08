@@ -1,4 +1,11 @@
-.cache
-package.json
+dist/
+.astro/
+node_modules/
 package-lock.json
-public
+public/fonts/
+content/assets/
+content/blog/
+content/course/
+content/presentation/
+content/publication/
+content/translation/

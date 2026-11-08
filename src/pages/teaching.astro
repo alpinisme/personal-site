@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { newestFirst } from '../lib/sort';
+
+const courses = newestFirst(await getCollection('course'));
+const rendered = await Promise.all(
+    courses.map(async (course) => ({
+        course,
+        Content: (await render(course)).Content,
+    })),
+);
+---
+
+<Base
+    title="Teaching"
+    description="Courses Matt Nelson taught in literature, religion, composition, and Sanskrit."
+>
+    <h1>Teaching</h1>
+    <p class="lede">
+        I taught literature, religion, composition, and Sanskrit at the
+        university level.
+    </p>
+    {rendered.map(({ course, Content }) => (
+        <article class="entry">
+            <h3>{course.data.title}</h3>
+            <p class="meta">
+                {course.data.school}, {course.data.year}
+            </p>
+            <div class="detail">
+                <Content />
+            </div>
+        </article>
+    ))}
+</Base>

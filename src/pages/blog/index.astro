@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const posts = (await getCollection('blog')).toSorted(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+---
+
+<Base title="Writing" description="Notes and translations by Matt Nelson.">
+    <h1>Writing</h1>
+    {posts.map((post) => (
+        <article class="entry">
+            <h3>
+                <a href={`/blog/${post.id}`}>{post.data.title}</a>
+            </h3>
+            <p class="meta">{post.data.description}</p>
+        </article>
+    ))}
+    <p class="related">
+        For my academic writing, see my <a href="/research">research</a>.
+    </p>
+</Base>
+
+<style>
+    .related {
+        margin-top: 2rem;
+    }
+</style>
