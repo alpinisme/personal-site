@@ -6,7 +6,7 @@ order: 1
 
 import LegendDemo from '../../src/components/LegendDemo.astro';
 
-[Panorama](https://panorama.ag) shows growers what their machines recorded in the field, such as yield and moisture. The in-cab display records that data five times a second, and growers rely on a visual representation of that data as a colored map to quickly recognize problem areas.
+[Panorama](https://panorama.ag) shows growers what their machines recorded in the field, such as yield and moisture. The in-cab display records that data five times a second. Growers view it as a map and use the map's colors to find problem areas.
 
 Those colors only help if they distinguish thresholds that a grower cares about. What counts as good yield on one farm can be poor on another, and the same goes for two fields on one farm. So a grower needs to set the scale, try another, and see the answer right away.
 
@@ -26,13 +26,13 @@ Keeping raw data in the browser pays off in other ways too, not just speed. Duri
 
 In 2026, I added filters. A grower can now isolate the parts of one map layer based on measurements in another. This helps control for confounding variables or see how problems in one part of the system impacted performance in another. By combining the two tile data sources in one view, the browser can decide to black out or highlight areas based on a condition at each pixel. The moisture slider in the demo is a simple version of that idea.
 
-The approach does have some costs, though. When someone hovers over the map with their cursor, we show a preview of the exact measurement observed at that pixel. Calculating that measurement happens in TypeScript, even though the map itself computed it in a shader written in GLSL. So the decoding logic has to exist in two languages, and both copies must be kept in sync.
+The approach has a cost, though. When someone hovers over the map with their cursor, we show a preview of the exact measurement observed at that pixel. Calculating that measurement happens in TypeScript, even though the map itself computed it in a shader written in GLSL. So the decoding logic has to exist in two languages, and both copies must be kept in sync.
 
-## Data editing made simple
+## Previewing a data edit
 
-One challenge that growers have is that it's easy to forget the finicky parts of bookkeeping when they're in the middle of planting season. They're busy enough operating the machine, and they don't always remember to update the monitor when fields change or they swap one input for another. So when the end of season arrives, and it's time to dig into their data, they often find themselves with messy data that needs cleaning.
+During planting season, growers are busy running the machine, and they don't always remember to update the monitor when fields change or they swap one input for another. So when the end of season arrives, and it's time to dig into their data, they often find themselves with messy data that needs cleaning.
 
-But a UX challenge for data cleanup is that the grower may know _where_ they made a change, but not when, and certainly not at what exact point in the file they should register the switch. That's where the shader comes in again. A separate tile layer stores each pixel's position in the file's sequence of measurements. The slider sets a range of those positions, and the shader recolors every pixel that falls inside it. By letting the grower slide a control to visualize which parts of the field will be affected by an edit, we give them a quick and easy way to fix their mistakes.
+The hard part of cleanup is that a grower may know _where_ they made a change, but not when, and certainly not at what exact point in the file they should register the switch. That's where the shader comes in again. A separate tile layer stores each pixel's position in the file's sequence of measurements. The slider sets a range of those positions, and the shader recolors every pixel that falls inside it. By letting the grower slide a control to visualize which parts of the field will be affected by an edit, we give them a quick and easy way to fix their mistakes.
 
 I built the map visualization for this, and my colleague Lukas built the form that goes with it.
 
@@ -40,4 +40,6 @@ I built the map visualization for this, and my colleague Lukas built the form th
 
 This design assumes that the browser leaves each tile's raw bytes alone. In 2022, we noticed that although the map worked on desktop, it was blank for most (but not all!) map layers on iOS. After some frustrating debugging, I traced the failure to alpha premultiplication in iOS Safari's PNG handling. When iOS decodes the image, it multiplies each color channel by the alpha channel to save work at render time. That's harmless for a photo, but it means that wherever alpha is zero, the RGB channels become zero and the data stored there is lost. Naturally, I [reported it to OpenLayers](https://github.com/openlayers/openlayers/issues/13934) with a small reproduction. We've since worked around the problem.
 
-Since then, the shader has kept evolving, and the legend around it has changed too. In 2026, my colleague Andrew redesigned the legend and its editor, and Ethan built the new design. We've also kept finding new ways to use our many measurement rasters.
+Since then, the shader has kept evolving, and the legend around it has changed too. In 2026, my colleague Andrew redesigned the legend and its editor, and Ethan built the new design.
+
+The newest use is in our point-in-time diagnose mode, where you can click the map and see the diagnostics from the moment the tractor was at that spot. I used the same position data to have the shader lower the opacity of everything the tractor did after that point, so it's clear what it had already done and what remained.
